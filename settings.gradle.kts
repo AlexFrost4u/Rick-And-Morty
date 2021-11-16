@@ -17,6 +17,7 @@ include(":app")
 
 // Core modules
 include(":core:ui")
+include(":core:common")
 
 // Navigation
 include(":navigation")
@@ -27,4 +28,5 @@ include(
 )
 
 // Features
-include()
+include(":feature:rickandmorty_api")
+include(":feature:rickandmorty_impl")

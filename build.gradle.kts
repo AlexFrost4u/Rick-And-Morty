@@ -1,4 +1,3 @@
-
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN
 
@@ -12,6 +11,7 @@ buildscript {
     dependencies {
         classpath("${Plugin.toolsBuildGradle}:${Version.androidGradle}")
         classpath("${Plugin.kotlinGradlePlugin}:${Version.kotlin}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
     }
 }
 

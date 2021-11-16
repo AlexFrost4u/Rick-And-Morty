@@ -16,16 +16,15 @@ rootProject.name = "rick-and-morty-android"
 include(":app")
 
 // Core modules
-include(":core:ui", ":core:common")
+include(":core:ui")
 
 // Navigation
 include(":navigation")
 
 // UI
 include(
-    ":ui:home",
-    ":ui:movie_details"
+    ":ui:home"
 )
 
 // Features
-include(":feature:tmdb_api", ":feature:tmdb_impl")
+include()

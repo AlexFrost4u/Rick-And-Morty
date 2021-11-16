@@ -1,4 +1,4 @@
-package com.ronasit.rickandmorty.ui.theme
+package com.ronasit.core.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

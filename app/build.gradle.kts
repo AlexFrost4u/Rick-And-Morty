@@ -50,6 +50,8 @@ android {
 }
 
 dependencies {
+    implementation(project(ModuleDependency.Core.ui))
+
     implementation(Dependency.AndroidX.core)
     implementation(Dependency.AndroidX.appcompat)
     implementation(Dependency.AndroidX.material)

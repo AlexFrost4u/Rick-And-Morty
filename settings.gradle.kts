@@ -23,8 +23,8 @@ include(":navigation")
 
 // UI
 include(
-        ":ui:home",
-        ":ui:movie_details"
+    ":ui:home",
+    ":ui:movie_details"
 )
 
 // Features

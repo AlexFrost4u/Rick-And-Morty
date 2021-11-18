@@ -1,12 +1,8 @@
 @file:Suppress("detekt.MagicNumber")
+
 package com.ronasit.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
-
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
 
 val ChristiLight = Color(0xFF47C60B)
 val ChristiDark = Color(0xFF399E09)

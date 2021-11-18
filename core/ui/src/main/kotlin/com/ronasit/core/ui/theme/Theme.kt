@@ -1,35 +1,10 @@
 package com.ronasit.core.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-
-val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
-)
-
-val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
-)
 
 @Immutable
 data class AppCustomColors(
@@ -59,6 +34,34 @@ data class AppCustomTypography(
     val bodySmallBold: TextStyle,
     val bodyExtraSmall: TextStyle,
     val bodyExtraSmallBold: TextStyle
+)
+
+fun customDarkColors(): AppCustomColors = AppCustomColors(
+    primary = ChristiLight,
+    primaryTap = ChristiDark,
+    white = White,
+    grayLight = Concrete,
+    grayNormal = Loblolly,
+    grayDark = OsloGray,
+    blackElements = Mirage,
+    blackCard = EbonyClay,
+    blackBG = BlackPearl
+)
+
+fun gilroyTypography(): AppCustomTypography = AppCustomTypography(
+    title1 = CustomTypography.title1,
+    title2 = CustomTypography.title2,
+    title3 = CustomTypography.title3,
+    title4 = CustomTypography.title4,
+    title5 = CustomTypography.title5,
+    bodyLarge = CustomTypography.bodyLarge,
+    bodyLargeBold = CustomTypography.bodyLargeBold,
+    bodyDefault = CustomTypography.bodyDefault,
+    bodyDefaultBold = CustomTypography.bodyDefaultBold,
+    bodySmall = CustomTypography.bodySmall,
+    bodySmallBold = CustomTypography.bodySmallBold,
+    bodyExtraSmall = CustomTypography.bodyExtraSmall,
+    bodyExtraSmallBold = CustomTypography.bodyExtraSmallBold
 )
 
 val LocalCustomColors = staticCompositionLocalOf {
@@ -94,57 +97,23 @@ val LocalCustomTypography = staticCompositionLocalOf {
 }
 
 @Composable
-fun CustomTheme() {
-    val customColors = AppCustomColors(
-        primary = ChristiLight,
-        primaryTap = ChristiDark,
-        white = White,
-        grayLight = Concrete,
-        grayNormal = Loblolly,
-        grayDark = OsloGray,
-        blackElements = Mirage,
-        blackCard = EbonyClay,
-        blackBG = BlackPearl
-    )
-    val customTypography = AppCustomTypography(
-        title1 = CustomTypography.title1,
-        title2 = CustomTypography.title2,
-        title3 = CustomTypography.title3,
-        title4 = CustomTypography.title4,
-        title5 = CustomTypography.title5,
-        bodyLarge = CustomTypography.bodyLarge,
-        bodyLargeBold = CustomTypography.bodyLargeBold,
-        bodyDefault = CustomTypography.bodyDefault,
-        bodyDefaultBold = CustomTypography.bodyDefaultBold,
-        bodySmall = CustomTypography.bodySmall,
-        bodySmallBold = CustomTypography.bodySmallBold,
-        bodyExtraSmall = CustomTypography.bodyExtraSmall,
-        bodyExtraSmallBold = CustomTypography.bodyExtraSmallBold
-    )
+fun RickAndMortyTheme() {
+    @Suppress
+    val rickAndMortyColors = customDarkColors()
 
+    @Suppress
+    val rickAndMortyTypography = gilroyTypography()
 }
 
-object CustomTheme {
+@Suppress
+object RickAndMortyTheme {
+    @Suppress
     val colors: AppCustomColors
         @Composable
         get() = LocalCustomColors.current
+
+    @Suppress
     val typography: AppCustomTypography
         @Composable
         get() = LocalCustomTypography.current
-}
-
-@Composable
-fun RickAndMortyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
-
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
 }

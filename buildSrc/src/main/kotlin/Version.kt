@@ -11,12 +11,6 @@ object Version {
     // Versions
     const val gradleVersions = "0.39.0"
 
-    //Coroutines
-    const val coroutines = "1.5.2"
-
-    //Koin
-    const val koin = "3.1.3"
-
     // Static analysis tools
     const val spotless = "5.17.1"
     const val ktlintJLLeitschuh = "10.2.0"

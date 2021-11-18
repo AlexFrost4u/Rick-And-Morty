@@ -2,6 +2,13 @@ object Dependency {
     object Kotlin {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Version.kotlin}"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:${Version.kotlin}"
+
+        object Coroutines{
+            private const val version = "1.5.2"
+
+            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+            const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
+        }
     }
 
     object AndroidX {
@@ -33,34 +40,29 @@ object Dependency {
     }
 
     object Orbit{
-        private const val versionOrbit = "4.3.0"
+        private const val version = "4.3.0"
 
-        const val core = "org.orbit-mvi:orbit-core:$versionOrbit"
-        const val viewModel = "org.orbit-mvi:orbit-viewmodel:$versionOrbit"
-        const val test = "org.orbit-mvi:orbit-test:$versionOrbit"
+        const val core = "org.orbit-mvi:orbit-core:$version"
+        const val viewModel = "org.orbit-mvi:orbit-viewmodel:$version"
+        const val test = "org.orbit-mvi:orbit-test:$version"
     }
 
-    object KotlinX{
-        object Coroutines{
-            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}"
-            const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutines}"
-        }
-    }
-
-    object Coil{
+    object Other{
         const val coil = "io.coil-kt:coil:1.4.0"
     }
 
     object Koin{
-        const val android = "io.insert-koin:koin-android:${Version.koin}"
-        const val compose = "io.insert-koin:koin-androidx-compose:${Version.koin}"
-        const val core = "io.insert-koin:koin-core:${Version.koin}"
+        private const val version = "3.1.3"
+
+        const val android = "io.insert-koin:koin-android:$version"
+        const val compose = "io.insert-koin:koin-androidx-compose:$version"
+        const val core = "io.insert-koin:koin-core:$version"
     }
 
     object Navigation{
         private const val nav_version = "2.3.5"
         const val fragment = "androidx.navigation:navigation-fragment-ktx:$nav_version"
         const val ui = "androidx.navigation:navigation-ui-ktx:$nav_version"
-        const val navigation = "androidx.navigation:navigation-compose:2.4.0-beta02"
+        const val compose = "androidx.navigation:navigation-compose:2.4.0-beta02"
     }
 }

@@ -16,8 +16,10 @@ rootProject.name = "rick-and-morty-android"
 include(":app")
 
 // Core modules
-include(":core:ui")
-include(":core:common")
+include(
+    ":core:ui",
+    ":core:common"
+)
 
 // Navigation
 include(":navigation")
@@ -28,5 +30,7 @@ include(
 )
 
 // Features
-include(":feature:rickandmorty_api")
-include(":feature:rickandmorty_impl")
+include(
+    ":feature:rickandmorty_api",
+    ":feature:rickandmorty_impl"
+)

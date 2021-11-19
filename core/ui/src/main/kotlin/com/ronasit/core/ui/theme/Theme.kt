@@ -1,13 +1,14 @@
 package com.ronasit.core.ui.theme
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 
 @Immutable
-data class AppCustomColors(
+data class AppColor(
     val primary: Color,
     val primaryTap: Color,
     val white: Color,
@@ -20,7 +21,7 @@ data class AppCustomColors(
 )
 
 @Immutable
-data class AppCustomTypography(
+data class AppTypography(
     val title1: TextStyle,
     val title2: TextStyle,
     val title3: TextStyle,
@@ -36,7 +37,7 @@ data class AppCustomTypography(
     val bodyExtraSmallBold: TextStyle
 )
 
-fun customDarkColors(): AppCustomColors = AppCustomColors(
+fun customDarkColors(): AppColor = AppColor(
     primary = ChristiLight,
     primaryTap = ChristiDark,
     white = White,
@@ -48,7 +49,7 @@ fun customDarkColors(): AppCustomColors = AppCustomColors(
     blackBG = BlackPearl
 )
 
-fun gilroyTypography(): AppCustomTypography = AppCustomTypography(
+fun gilroyTypography(): AppTypography = AppTypography(
     title1 = CustomTypography.title1,
     title2 = CustomTypography.title2,
     title3 = CustomTypography.title3,
@@ -65,7 +66,7 @@ fun gilroyTypography(): AppCustomTypography = AppCustomTypography(
 )
 
 val LocalCustomColors = staticCompositionLocalOf {
-    AppCustomColors(
+    AppColor(
         primary = Color.Unspecified,
         primaryTap = Color.Unspecified,
         white = Color.Unspecified,
@@ -79,7 +80,7 @@ val LocalCustomColors = staticCompositionLocalOf {
 }
 
 val LocalCustomTypography = staticCompositionLocalOf {
-    AppCustomTypography(
+    AppTypography(
         title1 = TextStyle.Default,
         title2 = TextStyle.Default,
         title3 = TextStyle.Default,
@@ -97,23 +98,31 @@ val LocalCustomTypography = staticCompositionLocalOf {
 }
 
 @Composable
-fun RickAndMortyTheme() {
+fun RickAndMortyTheme(
+    content: @Composable () -> Unit
+) {
     @Suppress
     val rickAndMortyColors = customDarkColors()
 
     @Suppress
     val rickAndMortyTypography = gilroyTypography()
+
+    CompositionLocalProvider(
+        LocalCustomColors provides rickAndMortyColors,
+        LocalCustomTypography provides rickAndMortyTypography,
+        content = content
+    )
 }
 
 @Suppress
 object RickAndMortyTheme {
     @Suppress
-    val colors: AppCustomColors
+    val colors: AppColor
         @Composable
         get() = LocalCustomColors.current
 
     @Suppress
-    val typography: AppCustomTypography
+    val typography: AppTypography
         @Composable
         get() = LocalCustomTypography.current
 }

@@ -11,10 +11,6 @@ android {
         targetSdk = AndroidConfig.targetSdk
     }
 
-    buildFeatures {
-        compose = true
-    }
-
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
@@ -29,5 +25,5 @@ android {
     }
 }
 dependencies {
-    // TODO
+    implementation(project(ModuleDependency.Feature.rickAndMorty_api))
 }

@@ -2,6 +2,13 @@ object Dependency {
     object Kotlin {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Version.kotlin}"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:${Version.kotlin}"
+
+        object Coroutines{
+            private const val version = "1.5.2"
+
+            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+            const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
+        }
     }
 
     object AndroidX {
@@ -23,5 +30,39 @@ object Dependency {
     object Loggers {
         const val timber = "com.jakewharton.timber:timber:5.0.1"
         const val prettyLogger = "com.orhanobut:logger:2.2.0"
+        const val okhttpLogging = "com.squareup.okhttp3:logging-interceptor:4.9.2"
+    }
+
+    object Squareup {
+        const val moshi = "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+        const val okhttp = "com.squareup.okhttp3:okhttp:4.9.2"
+    }
+
+    object Orbit{
+        private const val version = "4.3.0"
+
+        const val core = "org.orbit-mvi:orbit-core:$version"
+        const val viewModel = "org.orbit-mvi:orbit-viewmodel:$version"
+        const val test = "org.orbit-mvi:orbit-test:$version"
+    }
+
+    object Other{
+        const val coil = "io.coil-kt:coil:1.4.0"
+    }
+
+    object Koin{
+        private const val version = "3.1.3"
+
+        const val android = "io.insert-koin:koin-android:$version"
+        const val compose = "io.insert-koin:koin-androidx-compose:$version"
+        const val core = "io.insert-koin:koin-core:$version"
+    }
+
+    object Navigation{
+        private const val version = "2.3.5"
+        const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
+        const val ui = "androidx.navigation:navigation-ui-ktx:$version"
+        const val compose = "androidx.navigation:navigation-compose:2.4.0-beta02"
     }
 }

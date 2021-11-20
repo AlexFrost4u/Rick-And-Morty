@@ -50,22 +50,22 @@ fun customDarkColors(): AppColor = AppColor(
 )
 
 fun gilroyTypography(): AppTypography = AppTypography(
-    title1 = CustomTypography.title1,
-    title2 = CustomTypography.title2,
-    title3 = CustomTypography.title3,
-    title4 = CustomTypography.title4,
-    title5 = CustomTypography.title5,
-    bodyLarge = CustomTypography.bodyLarge,
-    bodyLargeBold = CustomTypography.bodyLargeBold,
-    bodyDefault = CustomTypography.bodyDefault,
-    bodyDefaultBold = CustomTypography.bodyDefaultBold,
-    bodySmall = CustomTypography.bodySmall,
-    bodySmallBold = CustomTypography.bodySmallBold,
-    bodyExtraSmall = CustomTypography.bodyExtraSmall,
-    bodyExtraSmallBold = CustomTypography.bodyExtraSmallBold
+    title1 = GilroyTypography.title1,
+    title2 = GilroyTypography.title2,
+    title3 = GilroyTypography.title3,
+    title4 = GilroyTypography.title4,
+    title5 = GilroyTypography.title5,
+    bodyLarge = GilroyTypography.bodyLarge,
+    bodyLargeBold = GilroyTypography.bodyLargeBold,
+    bodyDefault = GilroyTypography.bodyDefault,
+    bodyDefaultBold = GilroyTypography.bodyDefaultBold,
+    bodySmall = GilroyTypography.bodySmall,
+    bodySmallBold = GilroyTypography.bodySmallBold,
+    bodyExtraSmall = GilroyTypography.bodyExtraSmall,
+    bodyExtraSmallBold = GilroyTypography.bodyExtraSmallBold
 )
 
-val LocalCustomColors = staticCompositionLocalOf {
+val LocalColors = staticCompositionLocalOf {
     AppColor(
         primary = Color.Unspecified,
         primaryTap = Color.Unspecified,
@@ -79,7 +79,7 @@ val LocalCustomColors = staticCompositionLocalOf {
     )
 }
 
-val LocalCustomTypography = staticCompositionLocalOf {
+val LocalTypography = staticCompositionLocalOf {
     AppTypography(
         title1 = TextStyle.Default,
         title2 = TextStyle.Default,
@@ -108,8 +108,8 @@ fun RickAndMortyTheme(
     val rickAndMortyTypography = gilroyTypography()
 
     CompositionLocalProvider(
-        LocalCustomColors provides rickAndMortyColors,
-        LocalCustomTypography provides rickAndMortyTypography,
+        LocalColors provides rickAndMortyColors,
+        LocalTypography provides rickAndMortyTypography,
         content = content
     )
 }
@@ -119,10 +119,10 @@ object RickAndMortyTheme {
     @Suppress
     val colors: AppColor
         @Composable
-        get() = LocalCustomColors.current
+        get() = LocalColors.current
 
     @Suppress
     val typography: AppTypography
         @Composable
-        get() = LocalCustomTypography.current
+        get() = LocalTypography.current
 }

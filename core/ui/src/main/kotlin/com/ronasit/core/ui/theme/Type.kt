@@ -1,6 +1,5 @@
 package com.ronasit.core.ui.theme
 
-import androidx.compose.material.Typography
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -17,7 +16,7 @@ val gilroyFamily = FontFamily(
 )
 
 @Immutable
-object CustomTypography {
+object GilroyTypography {
     val title1: TextStyle = TextStyle(fontFamily = gilroyFamily, fontSize = 44.sp, fontWeight = FontWeight.Bold)
     val title2: TextStyle = TextStyle(fontFamily = gilroyFamily, fontSize = 28.sp, fontWeight = FontWeight.Bold)
     val title3: TextStyle = TextStyle(fontFamily = gilroyFamily, fontSize = 22.sp, fontWeight = FontWeight.Bold)

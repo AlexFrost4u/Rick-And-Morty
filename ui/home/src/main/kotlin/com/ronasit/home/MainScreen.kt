@@ -30,8 +30,7 @@ fun MainContainer() {
             modifier = Modifier.fillMaxSize(),
             color = RickAndMortyTheme.colors.blackBG
         ) {
-           // Greeting("Trainees")
-
+            Greeting("Trainees")
         }
     }
 }

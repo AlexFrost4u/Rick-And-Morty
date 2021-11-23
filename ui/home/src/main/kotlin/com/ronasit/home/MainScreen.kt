@@ -17,7 +17,7 @@ fun MainContainer() {
             modifier = Modifier.fillMaxSize(),
             color = RickAndMortyTheme.colors.blackBG
         ) {
-            Splash()
+            SplashScreen()
             //Greeting("Trainees")
         }
     }

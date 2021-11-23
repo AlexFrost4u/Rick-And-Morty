@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources >
+<resources>
+
     <style name="Theme.RickAndMorty" parent="android:Theme.Material.Light.NoActionBar">
+
+    </style>
+
+    <style name="Theme.SplashScreens" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/ic_splash</item>
         <item name="android:navigationBarColor">#FF040C1E</item>
         <item name="android:statusBarColor">#FF040C1E</item>
-    </style>
-    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@drawable/splash</item>
-        <item name="postSplashScreenTheme">@style/Theme.RickAndMorty</item>
     </style>
 </resources>

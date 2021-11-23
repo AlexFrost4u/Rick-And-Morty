@@ -31,7 +31,6 @@ android {
 
 dependencies {
     api(Dependency.AndroidX.appcompat)
-    api(Dependency.AndroidX.splash)
     api(Dependency.AndroidX.Compose.ui)
     api(Dependency.AndroidX.Compose.tooling)
     api(Dependency.AndroidX.Compose.toolingPreview)

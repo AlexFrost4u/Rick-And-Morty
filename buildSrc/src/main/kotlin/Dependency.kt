@@ -3,7 +3,7 @@ object Dependency {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Version.kotlin}"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:${Version.kotlin}"
 
-        object Coroutines{
+        object Coroutines {
             private const val version = "1.5.2"
 
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
@@ -16,7 +16,6 @@ object Dependency {
         const val core = "androidx.core:core-ktx:1.7.0"
         const val appcompat = "androidx.appcompat:appcompat:1.3.1"
         const val material = "com.google.android.material:material:1.4.0"
-        const val splash = "androidx.core:core-splashscreen:1.0.0-alpha02"
 
         object Compose {
             const val ui = "androidx.compose.ui:ui:${Version.compose}"
@@ -40,7 +39,7 @@ object Dependency {
         const val okhttp = "com.squareup.okhttp3:okhttp:4.9.2"
     }
 
-    object Orbit{
+    object Orbit {
         private const val version = "4.3.0"
 
         const val core = "org.orbit-mvi:orbit-core:$version"
@@ -48,11 +47,12 @@ object Dependency {
         const val test = "org.orbit-mvi:orbit-test:$version"
     }
 
-    object Other{
+    object Other {
         const val coil = "io.coil-kt:coil:1.4.0"
+        const val animation = "com.airbnb.android:lottie-compose:4.2.1"
     }
 
-    object Koin{
+    object Koin {
         private const val version = "3.1.3"
 
         const val android = "io.insert-koin:koin-android:$version"
@@ -60,7 +60,7 @@ object Dependency {
         const val core = "io.insert-koin:koin-core:$version"
     }
 
-    object Navigation{
+    object Navigation {
         private const val version = "2.3.5"
         const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
         const val ui = "androidx.navigation:navigation-ui-ktx:$version"

@@ -26,7 +26,10 @@ include(":navigation")
 
 // UI
 include(
-    ":ui:home"
+    ":ui:home",
+    ":ui:character",
+    ":ui:location",
+    ":ui:episode"
 )
 
 // Features
@@ -34,3 +37,19 @@ include(
     ":feature:rickandmorty_api",
     ":feature:rickandmorty_impl"
 )
+
+// Character
+include(
+    ":character:list"
+)
+
+// Episode
+include(
+    ":episode:list"
+)
+
+// Location
+include(
+    ":location:list"
+)
+

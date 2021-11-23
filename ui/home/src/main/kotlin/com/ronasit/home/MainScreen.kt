@@ -1,6 +1,5 @@
 package com.ronasit.home
 
-
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -12,13 +11,11 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 @Composable
 fun MainContainer() {
     RickAndMortyTheme {
-        // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = RickAndMortyTheme.colors.blackBG
         ) {
             SplashScreen()
-            //Greeting("Trainees")
         }
     }
 }

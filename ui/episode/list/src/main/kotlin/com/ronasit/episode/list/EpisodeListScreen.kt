@@ -1,4 +1,4 @@
-package com.ronasit.list
+package com.ronasit.episode.list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 
 @Composable
-fun CharacterListScreen() {
+fun EpisodeListScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -24,7 +24,7 @@ fun CharacterListScreen() {
             color = MaterialTheme.colors.background
         ) {
             Text(
-                text = "Character List Screen"
+                text = "Episode List Screen"
             )
         }
     }

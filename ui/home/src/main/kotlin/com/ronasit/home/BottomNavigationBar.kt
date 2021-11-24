@@ -1,39 +1,50 @@
 package com.ronasit.home
 
-import androidx.compose.material.Icon
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.runtime.*
+import androidx.compose.material.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.majorkik.home.R
+import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import com.ronasit.core.ui.theme.RickAndMortyTheme
-
+import com.ronasit.navigation.NavigationItem
 
 @Composable
-fun BottomNavigation() {
+fun BottomNavigationBar(navController: NavController) {
 
-    val icons = listOf(
-        R.drawable.ic_rick_24,
-        R.drawable.ic_planet_24,
-        R.drawable.ic_play_24,
+    val items = listOf(
+        NavigationItem.Character,
+        NavigationItem.Location,
+        NavigationItem.Episode
     )
-
-    var selectedIndex by remember { mutableStateOf(0) }
 
     BottomNavigation(
         backgroundColor = RickAndMortyTheme.colors.blackCard,
         contentColor = RickAndMortyTheme.colors.white,
         elevation = 1.dp
     ) {
-        icons.forEachIndexed { index, image ->
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
+        val currentRoute = navBackStackEntry?.destination?.route
+        items.forEach { item ->
             BottomNavigationItem(
-                icon = { MenuItem(image) },
-                selected = selectedIndex == index,
+                icon = { MenuItem(item, currentRoute) },
+                selected = currentRoute == item.route,
                 label = null,
                 onClick = {
-                    selectedIndex = index
+                    navController.navigate(item.route) {
+                        navController.graph.startDestinationRoute?.let { route ->
+                            popUpTo(route) {
+                                saveState = true
+                            }
+                        }
+                        launchSingleTop = true
+
+                        restoreState = true
+                    }
                 }
             )
         }
@@ -41,7 +52,13 @@ fun BottomNavigation() {
 }
 
 @Composable
-fun MenuItem(resourceId: Int) {
+fun MenuItem(item: NavigationItem, currentRoute: String?) {
+    // Set icon. Decided to go for first = icon, second = icon_filled as initially they are not filled
+    val resourceId = if (item.route != currentRoute) {
+        item.icons!!.first
+    } else {
+        item.icons!!.second
+    }
     Icon(
         painter = painterResource(id = resourceId),
         contentDescription = null
@@ -50,8 +67,8 @@ fun MenuItem(resourceId: Int) {
 
 @Preview
 @Composable
-private fun IconBottomNavigationComponentPreview() {
+@Suppress
+fun IconBottomNavigationComponentPreview() {
     RickAndMortyTheme {
-        BottomNavigation()
     }
 }

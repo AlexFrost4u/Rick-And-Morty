@@ -21,10 +21,11 @@ fun EpisodeListScreen() {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
+            color = RickAndMortyTheme.colors.blackBG
         ) {
             Text(
-                text = "Episode List Screen"
+                text = "Episode List Screen",
+                color = RickAndMortyTheme.colors.white
             )
         }
     }

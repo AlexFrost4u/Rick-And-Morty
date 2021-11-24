@@ -33,7 +33,7 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
-    api(Dependency.Navigation.compose)
+    implementation(Dependency.Navigation.compose)
     implementation(project(ModuleDependency.UI.episode))
     implementation(project(ModuleDependency.UI.character))
     implementation(project(ModuleDependency.UI.location))

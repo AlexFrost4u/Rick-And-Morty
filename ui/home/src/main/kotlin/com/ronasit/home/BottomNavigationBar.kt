@@ -29,6 +29,7 @@ fun BottomNavigationBar(navController: NavController) {
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
+
         items.forEach { item ->
             BottomNavigationItem(
                 icon = { MenuItem(item, currentRoute) },
@@ -41,8 +42,8 @@ fun BottomNavigationBar(navController: NavController) {
                                 saveState = true
                             }
                         }
-                        launchSingleTop = true
 
+                        launchSingleTop = true
                         restoreState = true
                     }
                 }
@@ -53,12 +54,13 @@ fun BottomNavigationBar(navController: NavController) {
 
 @Composable
 fun MenuItem(item: NavigationItem, currentRoute: String?) {
-    // Set icon. Decided to go for first = icon, second = icon_filled as initially they are not filled
-    val resourceId = if (item.route != currentRoute) {
-        item.icons!!.first
+
+    val resourceId = if (item.route == currentRoute) {
+        item.activeIcon
     } else {
-        item.icons!!.second
+        item.icon
     }
+
     Icon(
         painter = painterResource(id = resourceId),
         contentDescription = null
@@ -68,7 +70,7 @@ fun MenuItem(item: NavigationItem, currentRoute: String?) {
 @Preview
 @Composable
 @Suppress
-fun IconBottomNavigationComponentPreview() {
+fun PreviewNavigationBottomBar() {
     RickAndMortyTheme {
     }
 }

@@ -9,18 +9,21 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 @Composable
 fun MainContainer() {
     val navController = rememberNavController()
+
     RickAndMortyTheme {
         Scaffold(
             bottomBar = { BottomNavigationBar(navController) }
         ) {
+
             Navigation(navController)
         }
     }
 }
 
+
 @Preview(showBackground = true)
 @Composable
 @Suppress
-private fun DefaultPreview() {
+private fun MainContainerPreview() {
     MainContainer()
 }

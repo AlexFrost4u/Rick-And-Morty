@@ -21,10 +21,11 @@ fun CharacterListScreen() {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
+            color = RickAndMortyTheme.colors.blackBG
         ) {
             Text(
-                text = "Character List Screen"
+                text = "Character List Screen",
+                color = RickAndMortyTheme.colors.white
             )
         }
     }

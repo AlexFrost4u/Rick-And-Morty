@@ -27,5 +27,4 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
-    implementation(Dependency.Other.animation)
 }

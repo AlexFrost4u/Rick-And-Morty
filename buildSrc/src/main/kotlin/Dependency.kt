@@ -49,12 +49,10 @@ object Dependency {
 
     object Other {
         const val coil = "io.coil-kt:coil:1.4.0"
-        const val animation = "com.airbnb.android:lottie-compose:4.2.1"
     }
 
     object Koin {
         private const val version = "3.1.3"
-
         const val android = "io.insert-koin:koin-android:$version"
         const val compose = "io.insert-koin:koin-androidx-compose:$version"
         const val core = "io.insert-koin:koin-core:$version"

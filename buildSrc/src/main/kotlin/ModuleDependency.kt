@@ -7,9 +7,9 @@ object ModuleDependency {
         private const val directory = ":ui"
 
         const val home = "$directory:home"
-        const val character = "$directory:character"
-        const val location = "$directory:location"
-        const val episode = "$directory:episode"
+        const val character = "$directory:character:list"
+        const val location = "$directory:location:list"
+        const val episode = "$directory:episode:list"
     }
 
     object Feature {
@@ -25,5 +25,4 @@ object ModuleDependency {
         const val ui = "$directory:ui"
         const val common = "$directory:common"
     }
-
 }

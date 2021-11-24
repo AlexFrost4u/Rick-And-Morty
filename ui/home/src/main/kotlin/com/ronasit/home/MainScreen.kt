@@ -1,36 +1,26 @@
 package com.ronasit.home
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 
 @Composable
 fun MainContainer() {
+    val navController = rememberNavController()
     RickAndMortyTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
+        Scaffold(
+            bottomBar = { BottomNavigationBar(navController) }
         ) {
-            Greeting("Trainees")
+            Navigation(navController)
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    RickAndMortyTheme {
-        Greeting("Android")
-    }
+@Suppress
+private fun DefaultPreview() {
+    MainContainer()
 }

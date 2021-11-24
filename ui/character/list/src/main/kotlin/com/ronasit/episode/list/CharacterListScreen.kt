@@ -1,4 +1,4 @@
-package com.ronasit.list
+package com.ronasit.episode.list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -17,7 +17,7 @@ fun CharacterListScreen() {
             .fillMaxSize()
             .background(MaterialTheme.colors.background)
     )
-    RickAndMortyTheme {
+    {
         // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),

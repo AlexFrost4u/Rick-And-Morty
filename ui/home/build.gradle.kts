@@ -38,4 +38,5 @@ dependencies {
     implementation(project(ModuleDependency.UI.character))
     implementation(project(ModuleDependency.UI.location))
     implementation(project(ModuleDependency.navigation))
+    implementation(Dependency.Other.accompanist)
 }

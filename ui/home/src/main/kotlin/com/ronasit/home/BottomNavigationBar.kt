@@ -7,7 +7,6 @@ import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -43,7 +42,7 @@ fun BottomNavigationBar(navController: NavController) {
                                 saveState = true
                             }
                         }
-                        Log.i("RICK_AND_MORTY","OnClick")
+                        Log.i("RICK_AND_MORTY", "OnClick")
                         launchSingleTop = true
                         restoreState = true
                     }

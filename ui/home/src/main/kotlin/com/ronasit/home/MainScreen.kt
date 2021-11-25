@@ -1,14 +1,16 @@
 package com.ronasit.home
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 
+@ExperimentalAnimationApi
 @Composable
 fun MainContainer() {
-    val navController = rememberNavController()
+    val navController = rememberAnimatedNavController()
 
     RickAndMortyTheme {
         Scaffold(
@@ -19,6 +21,7 @@ fun MainContainer() {
     }
 }
 
+@ExperimentalAnimationApi
 @Preview(showBackground = true)
 @Composable
 @Suppress

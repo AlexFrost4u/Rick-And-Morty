@@ -1,5 +1,4 @@
 
-
 plugins {
     id(Plugin.androidLibrary)
     kotlin(Plugin.android)

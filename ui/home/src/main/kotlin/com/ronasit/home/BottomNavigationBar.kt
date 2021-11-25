@@ -1,6 +1,5 @@
 package com.ronasit.home
 
-import android.util.Log
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
@@ -15,7 +14,6 @@ import com.ronasit.navigation.NavigationItem
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
-
     val items = listOf(
         NavigationItem.Character,
         NavigationItem.Location,
@@ -42,7 +40,7 @@ fun BottomNavigationBar(navController: NavController) {
                                 saveState = true
                             }
                         }
-                        Log.i("RICK_AND_MORTY", "OnClick")
+
                         launchSingleTop = true
                         restoreState = true
                     }
@@ -54,7 +52,6 @@ fun BottomNavigationBar(navController: NavController) {
 
 @Composable
 fun MenuItem(item: NavigationItem, currentRoute: String?) {
-
     val resourceId = if (item.route == currentRoute) {
         item.activeIcon
     } else {

@@ -24,7 +24,6 @@ fun Navigation(navController: NavHostController) {
         popEnterTransition = { fadeIn(animationSpec = tween(0)) },
         popExitTransition = { fadeOut(animationSpec = tween(0)) },
     ) {
-
         composable(NavigationItem.Character.route) {
             CharacterListScreen()
         }
@@ -32,6 +31,7 @@ fun Navigation(navController: NavHostController) {
         composable(NavigationItem.Location.route) {
             LocationListScreen()
         }
+
         composable(NavigationItem.Episode.route) {
             EpisodeListScreen()
         }

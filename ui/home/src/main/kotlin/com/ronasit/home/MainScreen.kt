@@ -6,16 +6,19 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.accompanist.insets.ProvideWindowInsets
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 
 @Composable
 fun MainContainer() {
-    RickAndMortyTheme {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = RickAndMortyTheme.colors.blackBG
-        ) {
-            SplashScreen()
+    ProvideWindowInsets {
+        RickAndMortyTheme {
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = RickAndMortyTheme.colors.blackBG
+            ) {
+
+            }
         }
     }
 }

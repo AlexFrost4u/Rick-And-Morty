@@ -49,6 +49,8 @@ object Dependency {
 
     object Other {
         const val coil = "io.coil-kt:coil:1.4.0"
+        const val insetter = "dev.chrisbanes.insetter:insetter:0.6.1"
+        const val insets = "com.google.accompanist:accompanist-insets:0.21.3-beta"
     }
 
     object Koin {

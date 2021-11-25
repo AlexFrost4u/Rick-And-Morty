@@ -1,6 +1,5 @@
 package com.ronasit.navigation
 
-// Making pair nullable so that new screens won't be forced to have icons.
 sealed class NavigationItem(val route: String, val icon: Int, val activeIcon: Int) {
     object Character : NavigationItem(
         "character_list",

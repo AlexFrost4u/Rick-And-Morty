@@ -21,16 +21,21 @@ include(
     ":core:common"
 )
 
-// Navigation
-include(":navigation")
-
 // UI
 include(
-    ":ui:home"
+    ":ui:home",
+    ":ui:character:list",
+    ":ui:location:list",
+    ":ui:episode:list"
 )
 
 // Features
 include(
     ":feature:rickandmorty_api",
     ":feature:rickandmorty_impl"
+)
+
+// Navigation
+include(
+    ":navigation"
 )

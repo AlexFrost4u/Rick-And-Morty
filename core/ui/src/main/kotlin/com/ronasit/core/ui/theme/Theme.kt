@@ -37,7 +37,7 @@ data class AppTypography(
     val bodyExtraSmallBold: TextStyle
 )
 
-fun customDarkColors(): AppColor = AppColor(
+fun darkColors(): AppColor = AppColor(
     primary = ChristiLight,
     primaryTap = ChristiDark,
     white = White,
@@ -102,7 +102,7 @@ fun RickAndMortyTheme(
     content: @Composable () -> Unit
 ) {
     @Suppress
-    val rickAndMortyColors = customDarkColors()
+    val rickAndMortyColors = darkColors()
 
     @Suppress
     val rickAndMortyTypography = gilroyTypography()

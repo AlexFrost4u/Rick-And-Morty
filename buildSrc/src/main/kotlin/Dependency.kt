@@ -51,6 +51,7 @@ object Dependency {
         const val coil = "io.coil-kt:coil:1.4.0"
         const val insetter = "dev.chrisbanes.insetter:insetter:0.6.1"
         const val insets = "com.google.accompanist:accompanist-insets:0.21.3-beta"
+        const val accompanist = "com.google.accompanist:accompanist-navigation-animation:0.21.3-beta"
     }
 
     object Koin {
@@ -66,4 +67,5 @@ object Dependency {
         const val ui = "androidx.navigation:navigation-ui-ktx:$version"
         const val compose = "androidx.navigation:navigation-compose:2.4.0-beta02"
     }
+
 }

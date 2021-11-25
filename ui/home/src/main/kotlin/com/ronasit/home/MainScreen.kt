@@ -3,35 +3,33 @@ package com.ronasit.home
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 
+@ExperimentalAnimationApi
 @Composable
 fun MainContainer() {
-    ProvideWindowInsets {
-        RickAndMortyTheme {
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = RickAndMortyTheme.colors.blackBG
-            ) {
-
-            }
+        val navController = rememberAnimatedNavController()
+        ProvideWindowInsets {
+            RickAndMortyTheme {
+                Scaffold(
+                    bottomBar = { BottomNavigationBar(navController = navController) }
+                ) {
+                    Navigation(navController = navController)
+                }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
+@ExperimentalAnimationApi
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    RickAndMortyTheme {
-        Greeting("Android")
-    }
+@Suppress
+private fun MainContainerPreview() {
+    MainContainer()
 }

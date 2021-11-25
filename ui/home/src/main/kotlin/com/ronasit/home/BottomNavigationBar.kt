@@ -13,7 +13,7 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.navigation.NavigationItem
 
 @Composable
-fun BottomNavigationBar(navController: NavController) {
+internal fun BottomNavigationBar(navController: NavController) {
     val items = listOf(
         NavigationItem.Character,
         NavigationItem.Location,
@@ -51,7 +51,7 @@ fun BottomNavigationBar(navController: NavController) {
 }
 
 @Composable
-fun MenuItem(item: NavigationItem, currentRoute: String?) {
+private fun MenuItem(item: NavigationItem, currentRoute: String?) {
     val resourceId = if (item.route == currentRoute) {
         item.activeIcon
     } else {

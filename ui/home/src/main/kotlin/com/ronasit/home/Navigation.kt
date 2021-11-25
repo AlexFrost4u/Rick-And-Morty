@@ -15,7 +15,7 @@ import com.ronasit.navigation.NavigationItem
 
 @ExperimentalAnimationApi
 @Composable
-fun Navigation(navController: NavHostController) {
+internal fun Navigation(navController: NavHostController) {
     AnimatedNavHost(
         navController,
         startDestination = NavigationItem.Character.route,

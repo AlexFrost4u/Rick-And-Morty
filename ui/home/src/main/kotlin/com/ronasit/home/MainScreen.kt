@@ -12,14 +12,12 @@ fun MainContainer() {
 
     RickAndMortyTheme {
         Scaffold(
-            bottomBar = { BottomNavigationBar(navController) }
+            bottomBar = { BottomNavigationBar(navController = navController) }
         ) {
-
-            Navigation(navController)
+            Navigation(navController = navController)
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

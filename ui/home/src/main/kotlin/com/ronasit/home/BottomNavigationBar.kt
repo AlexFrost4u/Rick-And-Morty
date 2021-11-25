@@ -1,5 +1,6 @@
 package com.ronasit.home
 
+import android.util.Log
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
@@ -42,7 +43,7 @@ fun BottomNavigationBar(navController: NavController) {
                                 saveState = true
                             }
                         }
-
+                        Log.i("RICK_AND_MORTY","OnClick")
                         launchSingleTop = true
                         restoreState = true
                     }
@@ -65,12 +66,4 @@ fun MenuItem(item: NavigationItem, currentRoute: String?) {
         painter = painterResource(id = resourceId),
         contentDescription = null
     )
-}
-
-@Preview
-@Composable
-@Suppress
-fun PreviewNavigationBottomBar() {
-    RickAndMortyTheme {
-    }
 }

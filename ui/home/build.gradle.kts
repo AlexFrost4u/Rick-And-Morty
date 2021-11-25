@@ -28,5 +28,5 @@ android {
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
     implementation(Dependency.Other.insets)
-    api(Dependency.Other.insetter)
+    implementation(Dependency.Other.insetter)
 }

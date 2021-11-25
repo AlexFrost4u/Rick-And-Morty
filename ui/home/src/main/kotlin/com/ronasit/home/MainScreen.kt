@@ -1,8 +1,5 @@
 package com.ronasit.home
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -14,14 +11,14 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 @ExperimentalAnimationApi
 @Composable
 fun MainContainer() {
-        val navController = rememberAnimatedNavController()
-        ProvideWindowInsets {
-            RickAndMortyTheme {
-                Scaffold(
-                    bottomBar = { BottomNavigationBar(navController = navController) }
-                ) {
-                    Navigation(navController = navController)
-                }
+    val navController = rememberAnimatedNavController()
+    ProvideWindowInsets {
+        RickAndMortyTheme {
+            Scaffold(
+                bottomBar = { BottomNavigationBar(navController = navController) }
+            ) {
+                Navigation(navController = navController)
+            }
         }
     }
 }

@@ -49,12 +49,18 @@ object Dependency {
 
     object Other {
         const val coil = "io.coil-kt:coil:1.4.0"
-        const val accompanist = "com.google.accompanist:accompanist-navigation-animation:0.21.3-beta"
+        const val insetter = "dev.chrisbanes.insetter:insetter:0.6.1"
+    }
+
+    object Accompanist {
+        private const val version = "0.21.3-beta"
+
+        const val insets = "com.google.accompanist:accompanist-insets:$version"
+        const val navigationAnimation = "com.google.accompanist:accompanist-navigation-animation:$version"
     }
 
     object Koin {
         private const val version = "3.1.3"
-
         const val android = "io.insert-koin:koin-android:$version"
         const val compose = "io.insert-koin:koin-androidx-compose:$version"
         const val core = "io.insert-koin:koin-core:$version"

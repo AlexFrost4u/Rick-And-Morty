@@ -1,4 +1,3 @@
-
 plugins {
     id(Plugin.androidLibrary)
     kotlin(Plugin.android)
@@ -32,10 +31,12 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
+    implementation(Dependency.Accompanist.insets)
+    implementation(Dependency.Other.insetter)
     implementation(Dependency.Navigation.compose)
     implementation(project(ModuleDependency.UI.episode))
     implementation(project(ModuleDependency.UI.character))
     implementation(project(ModuleDependency.UI.location))
     implementation(project(ModuleDependency.navigation))
-    implementation(Dependency.Other.accompanist)
+    implementation(Dependency.Accompanist.navigationAnimation)
 }

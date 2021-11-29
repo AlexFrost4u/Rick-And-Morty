@@ -26,7 +26,7 @@ fun MainContainer() {
 @ExperimentalAnimationApi
 @Preview(showBackground = true)
 @Composable
-@Suppress
+@Suppress("detekt.UnusedPrivateMember")
 private fun MainContainerPreview() {
     MainContainer()
 }

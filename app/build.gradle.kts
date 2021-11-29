@@ -64,4 +64,6 @@ dependencies {
 
     implementation(Dependency.Loggers.prettyLogger)
     implementation(Dependency.Loggers.timber)
+
+    implementation(Dependency.Koin.android)
 }

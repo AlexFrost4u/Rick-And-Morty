@@ -26,4 +26,10 @@ android {
 }
 dependencies {
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
+
+    implementation(Dependency.Koin.android)
+    implementation(Dependency.Koin.core)
+    implementation(Dependency.Squareup.retrofit)
+    implementation(Dependency.Squareup.moshi)
+    implementation(Dependency.Squareup.moshiConverter)
 }

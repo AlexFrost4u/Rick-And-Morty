@@ -26,6 +26,7 @@ internal fun BottomNavigationBar(navController: NavController) {
     BottomNavigation(
         backgroundColor = RickAndMortyTheme.colors.blackCard,
         contentColor = RickAndMortyTheme.colors.white,
+        elevation = 0.dp,
         modifier = Modifier
             .background(RickAndMortyTheme.colors.blackCard)
             .navigationBarsWithImePadding()

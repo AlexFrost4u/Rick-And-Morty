@@ -1,7 +1,6 @@
 package com.ronasit.feature.rickandmorty_impl
 
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.codegen.JsonClassCodegenProcessor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -20,7 +19,6 @@ val rickAndMortyModule = module {
 
 private fun buildMoshi(): Moshi {
     return Moshi.Builder()
-        .add((JsonClassCodegenProcessor()))
         .build()
 }
 

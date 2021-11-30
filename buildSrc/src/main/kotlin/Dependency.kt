@@ -35,6 +35,7 @@ object Dependency {
 
     object Squareup {
         const val moshi = "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
+        const val moshiConverter = "com.squareup.retrofit2:converter-moshi:2.9.0"
         const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
         const val okhttp = "com.squareup.okhttp3:okhttp:4.9.2"
     }

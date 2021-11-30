@@ -1,18 +1,16 @@
 package com.ronasit.rickandmorty
 
 import android.app.Application
+import com.ronasit.feature.rickandmorty_impl.rickAndMortyModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.component.KoinComponent
 import org.koin.core.context.GlobalContext.startKoin
 
-
-class RickAndMortyApplication: Application() {
-    override fun onCreate(){
+class RickAndMortyApplication : Application() {
+    override fun onCreate() {
         super.onCreate()
-        startKoin{
+        startKoin {
             androidContext(this@RickAndMortyApplication)
-            modules(listOf())
+            modules(listOf(rickAndMortyModule))
         }
     }
-
 }

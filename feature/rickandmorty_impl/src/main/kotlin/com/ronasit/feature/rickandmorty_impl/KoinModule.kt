@@ -8,32 +8,29 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val rickAndMortyModule = module {
     single {
-        moshi()
-    }
-
-    single {
-        retrofit(get())
+        buildMoshi()
+        createRetrofit(get())
     }
 
     // Provide instance where interface is used
     single<RickAndMortyService> {
-        rickAndMortyService(get())
+        getRickAndMortyService(get())
     }
 }
 
-private fun moshi(): Moshi {
+private fun buildMoshi(): Moshi {
     return Moshi.Builder()
         .add((JsonClassCodegenProcessor()))
         .build()
 }
 
-private fun retrofit(moshi: Moshi): Retrofit.Builder {
+private fun createRetrofit(moshi: Moshi): Retrofit.Builder {
     return Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api")
+        .baseUrl(Constants.baseUrl)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
 }
 
-private fun rickAndMortyService(retrofit: Retrofit.Builder): RickAndMortyService {
+private fun getRickAndMortyService(retrofit: Retrofit.Builder): RickAndMortyService {
     return retrofit
         .build()
         .create(RickAndMortyService::class.java)

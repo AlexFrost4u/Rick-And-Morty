@@ -32,4 +32,5 @@ dependencies {
     implementation(Dependency.Squareup.retrofit)
     implementation(Dependency.Squareup.moshi)
     implementation(Dependency.Squareup.moshiConverter)
+    implementation(Dependency.Other.paging)
 }

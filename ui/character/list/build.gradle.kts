@@ -31,4 +31,11 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
+    implementation(project(ModuleDependency.Feature.rickAndMorty_api))
+    implementation(Dependency.Other.paging)
+    implementation(Dependency.Koin.android)
+    implementation(Dependency.Koin.compose)
+    implementation(Dependency.Koin.core)
+    implementation(Dependency.Other.toolbar)
+    implementation(Dependency.Accompanist.insets)
 }

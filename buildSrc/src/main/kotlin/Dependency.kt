@@ -51,6 +51,8 @@ object Dependency {
     object Other {
         const val coil = "io.coil-kt:coil:1.4.0"
         const val insetter = "dev.chrisbanes.insetter:insetter:0.6.1"
+        const val paging = "androidx.paging:paging-compose:1.0.0-alpha02"
+        const val toolbar = "me.onebone:toolbar-compose:2.3.0"
     }
 
     object Accompanist {

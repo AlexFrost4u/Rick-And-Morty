@@ -25,5 +25,5 @@ android {
     }
 }
 dependencies {
-    // TODO
+    implementation(Dependency.Other.paging)
 }

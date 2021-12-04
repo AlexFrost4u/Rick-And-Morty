@@ -1,8 +1,7 @@
 package com.ronasit.episode.list
 
 import androidx.paging.PagingSource
-import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
-import java.lang.Exception
+import androidx.paging.PagingState
 import com.ronasit.feature.rickandmorty_api.domain_models.Character
 import com.ronasit.feature.rickandmorty_api.use_cases.GetCharacters
 
@@ -19,5 +18,9 @@ class CharacterSource(private val getCharacters: GetCharacters) : PagingSource<I
         } catch (e: Exception) {
             LoadResult.Error(e)
         }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
+        TODO("Not yet implemented")
     }
 }

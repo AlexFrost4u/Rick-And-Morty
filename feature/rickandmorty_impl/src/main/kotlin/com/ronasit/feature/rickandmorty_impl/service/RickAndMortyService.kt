@@ -9,5 +9,4 @@ interface RickAndMortyService {
     suspend fun getAllCharacters(
         @Query("page") pageNumber: Int
     ): CharacterResponse
-
 }

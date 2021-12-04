@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ronasit.rickandmorty">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".RickAndMortyApplication"
         android:allowBackup="true"
@@ -18,6 +20,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SplashScreen"
             tools:ignore="LockedOrientationActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

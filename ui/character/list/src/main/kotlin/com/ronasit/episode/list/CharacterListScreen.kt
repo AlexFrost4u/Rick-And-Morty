@@ -1,5 +1,6 @@
 package com.ronasit.episode.list
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,24 +18,28 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
-import com.google.accompanist.insets.statusBarsPadding
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.items
+import coil.compose.rememberImagePainter
+import com.google.accompanist.insets.statusBarsPadding
 import com.ronasit.character.list.R
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.core.ui.theme.White
+import com.ronasit.feature.rickandmorty_api.domain_models.Character
 import me.onebone.toolbar.CollapsingToolbarScaffold
 import me.onebone.toolbar.ScrollStrategy
 import me.onebone.toolbar.rememberCollapsingToolbarScaffoldState
 import org.koin.androidx.compose.viewModel
-import com.ronasit.feature.rickandmorty_api.domain_models.Character
 
 @Composable
 fun CharacterListScreen() {
-    val viewModel:CharacterListViewModel by viewModel()
+    val viewModel: CharacterListViewModel by viewModel()
     val state = rememberCollapsingToolbarScaffoldState()
     var searchText by rememberSaveable { mutableStateOf("") }
-
+    val characters = viewModel.getCharacterPagination().collectAsLazyPagingItems()
     CollapsingToolbarScaffold(
         toolbar = {
             Box(
@@ -72,7 +77,46 @@ fun CharacterListScreen() {
     ) {
         Column {
             SearchBar(searchText = searchText, onSearchTextChange = { searchText = it })
-            CharacterList()
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 56.dp)
+            ) {
+                items(characters) { character ->
+                    Log.i("QWERTY","${character!!.name} and ${character.imageUrl}")
+                    Card(
+                        backgroundColor = RickAndMortyTheme.colors.blackCard,
+                        shape = RoundedCornerShape(16.dp),
+                        modifier = Modifier
+                            .defaultMinSize(minHeight = 256.dp, minWidth = 202.dp)
+                            .fillMaxSize()
+                            .padding(start = 16.dp, bottom = 16.dp)
+                    ) {
+                        Column() {
+                            Image(
+                                painter = rememberImagePainter(character.imageUrl),
+                                contentDescription = null,
+                                contentScale = ContentScale.Fit,
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(start = 8.dp, end = 8.dp, top = 8.dp, bottom = 16.dp)
+                            )
+                            Text(
+                                text = character.name,
+                                color = RickAndMortyTheme.colors.white,
+                                textAlign = TextAlign.Center,
+                                style = RickAndMortyTheme.typography.title5,
+                                modifier = Modifier
+                                    .padding(bottom = 16.dp)
+                                    .align(Alignment.CenterHorizontally)
+                            )
+                        }
+                    }
+
+
+                }
+            }
+
         }
     }
 }
@@ -143,20 +187,7 @@ fun SearchBar(searchText: String, onSearchTextChange: (String) -> Unit) {
     }
 }
 
-@Composable
-fun CharacterList() {
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(bottom = 56.dp)
-    ) {
-        items(100) {
-            Text(
-                text = "Item $it",
-                color = RickAndMortyTheme.colors.white,
-                modifier = Modifier.padding(8.dp)
-            )
-        }
-    }
-}
+
+
+
 

@@ -6,18 +6,18 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-internal object Network {
+object Network {
     fun buildMoshi(): Moshi {
         return Moshi.Builder()
             .build()
     }
 
-    fun buildOkHttpClient():OkHttpClient{
+    fun buildOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .build()
     }
 
-    fun createRetrofit(moshi: Moshi,okHttpClient: OkHttpClient): Retrofit.Builder {
+    fun createRetrofit(moshi: Moshi, okHttpClient: OkHttpClient): Retrofit.Builder {
         return Retrofit.Builder()
             .baseUrl(Constants.baseUrl)
             .client(okHttpClient)

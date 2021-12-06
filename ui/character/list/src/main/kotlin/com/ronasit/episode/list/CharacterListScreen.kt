@@ -28,7 +28,6 @@ import com.google.accompanist.insets.statusBarsPadding
 import com.ronasit.character.list.R
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.core.ui.theme.White
-import com.ronasit.feature.rickandmorty_api.domain_models.Character
 import me.onebone.toolbar.CollapsingToolbarScaffold
 import me.onebone.toolbar.ScrollStrategy
 import me.onebone.toolbar.rememberCollapsingToolbarScaffoldState

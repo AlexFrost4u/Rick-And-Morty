@@ -1,7 +1,9 @@
-package com.ronasit.feature.rickandmorty_impl.data_models
+package com.ronasit.feature.rickandmorty_impl.models
 
-import com.ronasit.feature.rickandmorty_api.domain_models.Character
+import com.ronasit.feature.rickandmorty_api.models.Character
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class CharacterResponse(
     val info: Info,
     val results: List<Result>

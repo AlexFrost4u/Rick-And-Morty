@@ -2,8 +2,8 @@ package com.ronasit.episode.list
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.ronasit.feature.rickandmorty_api.domain_models.Character
-import com.ronasit.feature.rickandmorty_api.use_cases.GetCharacters
+import com.ronasit.feature.rickandmorty_api.models.Character
+import com.ronasit.feature.rickandmorty_api.usecase.GetCharacters
 
 class CharacterSource(private val getCharacters: GetCharacters) : PagingSource<Int, Character>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
@@ -16,6 +16,7 @@ class CharacterSource(private val getCharacters: GetCharacters) : PagingSource<I
                 nextKey = page.plus(1)
             )
         } catch (e: Exception) {
+
             LoadResult.Error(e)
         }
     }

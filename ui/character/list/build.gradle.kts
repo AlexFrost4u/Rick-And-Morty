@@ -40,4 +40,5 @@ dependencies {
     implementation(Dependency.Koin.core)
     implementation(Dependency.Other.toolbar)
     implementation(Dependency.Accompanist.insets)
+    implementation(project(ModuleDependency.Core.common))
 }

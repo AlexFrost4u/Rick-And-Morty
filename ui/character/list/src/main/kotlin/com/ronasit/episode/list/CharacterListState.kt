@@ -1,7 +1,9 @@
 package com.ronasit.episode.list
 
-import com.ronasit.feature.rickandmorty_api.domain_models.Character
+import com.ronasit.feature.rickandmorty_api.models.Character
 
 data class CharacterListState(
-    val characters: List<Character> = emptyList()
+    val isLoading: Boolean = false,
+    val characters: List<Character> = emptyList(),
+    val error: String = ""
 )

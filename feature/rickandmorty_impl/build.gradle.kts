@@ -1,6 +1,7 @@
 plugins {
     id(Plugin.androidLibrary)
     kotlin(Plugin.android)
+    kotlin(Plugin.kotlinSerialization)
 }
 
 android {
@@ -26,11 +27,13 @@ android {
 }
 dependencies {
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
-
     implementation(Dependency.Koin.android)
     implementation(Dependency.Koin.core)
+    implementation(Dependency.Squareup.okhttp)
+    implementation(Dependency.Loggers.okhttpLogging)
+    implementation(Dependency.Loggers.timber)
+    implementation(Dependency.Other.kotlinSerialization)
+    implementation(Dependency.Other.kotlinSerializeConverter)
     implementation(Dependency.Squareup.retrofit)
-    implementation(Dependency.Squareup.moshi)
-    implementation(Dependency.Squareup.moshiConverter)
     implementation(Dependency.Other.paging)
 }

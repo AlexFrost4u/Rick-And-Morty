@@ -1,4 +1,4 @@
-package com.ronasit.feature.rickandmorty_api.domain_models
+package com.ronasit.feature.rickandmorty_api.models
 
 data class Character(
     val id: Int,

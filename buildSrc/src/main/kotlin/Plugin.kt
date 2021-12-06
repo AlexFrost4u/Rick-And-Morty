@@ -2,6 +2,7 @@ object Plugin {
     const val android = "android"
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
+    const val kotlinSerializationConverter = "kotlinx-serialization"
 
     // Kotlin
     const val toolsBuildGradle = "com.android.tools.build:gradle"

@@ -1,14 +1,16 @@
-package com.ronasit.feature.rickandmorty_impl.data_models
+package com.ronasit.feature.rickandmorty_impl.models
 
-import com.ronasit.feature.rickandmorty_api.domain_models.Character
-import com.squareup.moshi.Json
+import com.ronasit.feature.rickandmorty_api.models.Character
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class Result(
     val created: String,
     val episode: List<String>,
     val gender: String,
     val id: Int,
-    @Json(name = "image")
+    @SerialName("image")
     val imageUrl: String,
     val location: Location,
     val name: String,

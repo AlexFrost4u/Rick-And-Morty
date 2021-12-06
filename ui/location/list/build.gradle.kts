@@ -31,4 +31,6 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
+    implementation(Dependency.Other.toolbar)
+    implementation(Dependency.Accompanist.insets)
 }

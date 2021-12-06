@@ -10,7 +10,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.ronasit.episode.list.CharacterListScreen
 import com.ronasit.episode.list.EpisodeListScreen
-import com.ronasit.episode.list.LocationListScreen
+import com.ronasit.location.list.LocationListScreen
 import com.ronasit.navigation.NavigationItem
 
 @ExperimentalAnimationApi

@@ -51,6 +51,7 @@ object Dependency {
     object Other {
         const val coil = "io.coil-kt:coil:1.4.0"
         const val insetter = "dev.chrisbanes.insetter:insetter:0.6.1"
+        const val toolbar = "me.onebone:toolbar-compose:2.3.0"
     }
 
     object Accompanist {
@@ -73,5 +74,4 @@ object Dependency {
         const val ui = "androidx.navigation:navigation-ui-ktx:$version"
         const val compose = "androidx.navigation:navigation-compose:2.4.0-beta02"
     }
-
 }

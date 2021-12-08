@@ -6,7 +6,9 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.ronasit.feature.rickandmorty_api.models.Location
 import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.debounce
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.viewmodel.container
 
@@ -16,10 +18,11 @@ class LocationListViewModel(
 
     override val container = container<LocationListState, LocationListSideEffect>(LocationListState())
 
+    @FlowPreview
     fun getLocationPagination(text: String): Flow<PagingData<Location>> {
         return Pager(PagingConfig(pageSize = 20)) {
             LocationSource(getLocations, text)
-        }.flow
+        }.flow.debounce(400L)
     }
 }
 

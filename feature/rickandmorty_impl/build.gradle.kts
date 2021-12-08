@@ -33,7 +33,7 @@ dependencies {
     implementation(Dependency.Squareup.retrofit)
     implementation(Dependency.Squareup.okhttp)
     implementation(Dependency.Loggers.okhttpLogging)
-    implementation(Dependency.Other.paging)
+    implementation(Dependency.AndroidX.paging)
     implementation(Dependency.Loggers.prettyLogger)
     implementation(Dependency.Loggers.timber)
     implementation(Dependency.Other.kotlinSerializeConverter)

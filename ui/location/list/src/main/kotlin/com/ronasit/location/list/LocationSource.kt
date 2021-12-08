@@ -15,6 +15,7 @@ class LocationSource(private val getLocations: GetLocations, private val text: S
         return try {
             val page = params.key ?: 1
             val locationResponse = getLocations(page, text)
+
             LoadResult.Page(
                 data = locationResponse.location,
                 prevKey = if (page == 1) null else page - 1,

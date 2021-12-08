@@ -28,6 +28,7 @@ internal fun Location(location: Location) {
         "Fantasy town" to R.drawable.ic_fantasy_town_24,
         "Dream" to R.drawable.ic_dream_24,
     )
+
     RickAndMortyTheme {
         Box(
             Modifier

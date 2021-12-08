@@ -16,6 +16,7 @@ val rickAndMortyModule = module {
     single { GetLocations(get()) }
     single { createInterceptor() }
     single { getMediaType() }
+
     single<LocationRepository> {
         LocationRepositoryImpl(get())
     }

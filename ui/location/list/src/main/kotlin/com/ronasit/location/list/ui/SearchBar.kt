@@ -43,6 +43,7 @@ internal fun SearchBar(text: String, onTextChange: (String) -> Unit) {
                 .clip(RoundedCornerShape(16.dp)),
             textStyle = RickAndMortyTheme.typography.bodyDefault
         )
+
         Box(
             Modifier
                 .alpha(if (text.isNotEmpty()) 0f else 1f)

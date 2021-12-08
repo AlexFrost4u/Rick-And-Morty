@@ -44,7 +44,6 @@ fun createRetrofit(okHttpClient: OkHttpClient, mediaType: MediaType): Retrofit.B
 }
 
 fun getRickAndMortyService(retrofit: Retrofit.Builder): RickAndMortyService {
-    Timber.i("service")
     return retrofit
         .build()
         .create(RickAndMortyService::class.java)

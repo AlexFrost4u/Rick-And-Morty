@@ -23,6 +23,7 @@ class LocationListViewModel(
     @FlowPreview
     fun getLocationPagination(): Flow<PagingData<Location>> {
         val debounce = 400L
+
         return Pager(PagingConfig(pageSize = 20)) {
             LocationSource(getLocations, container.stateFlow.value.searchText)
         }.flow.debounce(debounce)

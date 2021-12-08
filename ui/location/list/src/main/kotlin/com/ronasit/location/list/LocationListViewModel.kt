@@ -16,9 +16,9 @@ class LocationListViewModel(
 
     override val container = container<LocationListState, LocationListSideEffect>(LocationListState())
 
-    fun getLocationPagination(): Flow<PagingData<Location>> {
+    fun getLocationPagination(text: String): Flow<PagingData<Location>> {
         return Pager(PagingConfig(pageSize = 20)) {
-            LocationSource(getLocations)
+            LocationSource(getLocations, text)
         }.flow
     }
 }

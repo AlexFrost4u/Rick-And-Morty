@@ -7,7 +7,8 @@ import retrofit2.http.Query
 interface RickAndMortyService {
     @GET("location")
     suspend fun getAllLocations(
-        @Query("page") pageNumber: Int
+        @Query("page") pageNumber: Int,
+        @Query("name") nameLocation: String
     ): LocationResponse
 }
 

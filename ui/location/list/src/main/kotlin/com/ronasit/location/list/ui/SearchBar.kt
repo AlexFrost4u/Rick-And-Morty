@@ -10,10 +10,6 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -24,18 +20,15 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.location.list.R
 
 @Composable
-internal fun SearchBar() {
+internal fun SearchBar(text: String, onTextChange: (String) -> Unit) {
     Box(
         Modifier
             .fillMaxWidth()
             .padding(end = 72.dp)
     ) {
-        var text by rememberSaveable { mutableStateOf("") }
         TextField(
             value = text,
-            onValueChange = {
-                text = it
-            },
+            onValueChange = onTextChange,
             colors = TextFieldDefaults.textFieldColors(
                 textColor = RickAndMortyTheme.colors.grayDark,
                 backgroundColor = RickAndMortyTheme.colors.blackCard,

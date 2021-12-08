@@ -4,6 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -18,8 +22,8 @@ import org.koin.androidx.compose.viewModel
 @Composable
 fun LocationListScreen() {
     val viewModel: LocationListViewModel by viewModel()
-    val locations = viewModel.getLocationPagination().collectAsLazyPagingItems()
-
+    var searchText by rememberSaveable { mutableStateOf("") }
+    val locations = viewModel.getLocationPagination(searchText).collectAsLazyPagingItems()
     ListToolBar(body = {
         Box(modifier = Modifier.background(RickAndMortyTheme.colors.blackBG)) {
             Column {
@@ -29,7 +33,7 @@ fun LocationListScreen() {
                         .fillMaxWidth()
                         .height(52.dp)
                 ) {
-                    SearchBar()
+                    SearchBar(text = searchText, onTextChange = { searchText = it })
                     FilterButton()
                 }
                 Box(modifier = Modifier.fillMaxSize()) {

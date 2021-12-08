@@ -6,7 +6,7 @@ import com.ronasit.feature.rickandmorty_impl.RickAndMortyService
 import com.ronasit.feature.rickandmorty_impl.data_models.toDomain
 
 class LocationRepositoryImpl(private val rickAndMortyService: RickAndMortyService) : LocationRepository {
-    override suspend fun getLocations(page: Int): LocationPager {
-        return rickAndMortyService.getAllLocations(page).toDomain()
+    override suspend fun getLocations(page: Int, name: String): LocationPager {
+        return rickAndMortyService.getAllLocations(page, name).toDomain()
     }
 }

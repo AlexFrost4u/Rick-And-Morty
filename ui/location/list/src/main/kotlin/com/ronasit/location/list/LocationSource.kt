@@ -6,7 +6,7 @@ import com.orhanobut.logger.Logger
 import com.ronasit.feature.rickandmorty_api.models.Location
 import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
 
-class LocationSource(private val getLocations: GetLocations) : PagingSource<Int, Location>() {
+class LocationSource(private val getLocations: GetLocations, private val text: String) : PagingSource<Int, Location>() {
     override fun getRefreshKey(state: PagingState<Int, Location>): Int? {
         TODO("Not yet implemented")
     }
@@ -14,7 +14,7 @@ class LocationSource(private val getLocations: GetLocations) : PagingSource<Int,
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Location> {
         return try {
             val page = params.key ?: 1
-            val locationResponse = getLocations(page)
+            val locationResponse = getLocations(page, text)
             LoadResult.Page(
                 data = locationResponse.location,
                 prevKey = if (page == 1) null else page - 1,

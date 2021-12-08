@@ -5,4 +5,3 @@ sealed class DataState<out T> {
     data class Error(val exception: Exception) : DataState<Nothing>()
     object Loading : DataState<Nothing>()
 }
-

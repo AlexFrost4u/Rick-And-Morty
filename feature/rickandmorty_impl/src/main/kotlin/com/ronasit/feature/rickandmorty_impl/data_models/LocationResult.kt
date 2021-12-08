@@ -1,6 +1,6 @@
 package com.ronasit.feature.rickandmorty_impl.data_models
 
-import com.ronasit.feature.rickandmorty_api.models.Location
+import com.ronasit.feature.rickandmorty_api.model.Location
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -17,4 +17,3 @@ data class LocationResult(
 fun LocationResult.toDomain(): Location {
     return Location(id = id, name = name, type = type)
 }
-

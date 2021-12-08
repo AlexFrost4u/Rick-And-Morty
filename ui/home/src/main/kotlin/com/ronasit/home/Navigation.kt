@@ -12,7 +12,9 @@ import com.ronasit.episode.list.CharacterListScreen
 import com.ronasit.episode.list.EpisodeListScreen
 import com.ronasit.location.list.LocationListScreen
 import com.ronasit.navigation.NavigationItem
+import kotlinx.coroutines.FlowPreview
 
+@FlowPreview
 @ExperimentalAnimationApi
 @Composable
 internal fun Navigation(navController: NavHostController) {

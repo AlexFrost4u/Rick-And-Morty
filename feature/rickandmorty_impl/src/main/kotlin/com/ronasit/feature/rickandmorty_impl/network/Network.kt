@@ -49,4 +49,3 @@ fun getRickAndMortyService(retrofit: Retrofit.Builder): RickAndMortyService {
         .build()
         .create(RickAndMortyService::class.java)
 }
-

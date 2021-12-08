@@ -9,6 +9,3 @@ data class Info(
     val pages: Int,
     val prev: String?
 )
-
-
-

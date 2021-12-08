@@ -11,4 +11,3 @@ interface RickAndMortyService {
         @Query("name") nameLocation: String
     ): LocationResponse
 }
-

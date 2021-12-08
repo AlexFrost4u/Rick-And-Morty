@@ -1,6 +1,6 @@
 package com.ronasit.feature.rickandmorty_impl.data_models
 
-import com.ronasit.feature.rickandmorty_api.models.LocationPager
+import com.ronasit.feature.rickandmorty_api.model.LocationPager
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -10,6 +10,5 @@ data class LocationResponse(
 )
 
 fun LocationResponse.toDomain(): LocationPager {
-    return LocationPager(location = results.map { item -> item.toDomain() }, countPage = info.count)
+    return LocationPager(location = results.map { item -> item.toDomain() }, countPage = info.pages)
 }
-

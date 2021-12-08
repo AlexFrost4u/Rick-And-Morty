@@ -1,6 +1,6 @@
 package com.ronasit.feature.rickandmorty_api.use_cases
 
-import com.ronasit.feature.rickandmorty_api.models.LocationPager
+import com.ronasit.feature.rickandmorty_api.model.LocationPager
 import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
 
 class GetLocations(

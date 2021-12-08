@@ -3,7 +3,7 @@ package com.ronasit.location.list
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.orhanobut.logger.Logger
-import com.ronasit.feature.rickandmorty_api.models.Location
+import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
 
 class LocationSource(private val getLocations: GetLocations, private val text: String) : PagingSource<Int, Location>() {
@@ -18,7 +18,7 @@ class LocationSource(private val getLocations: GetLocations, private val text: S
             LoadResult.Page(
                 data = locationResponse.location,
                 prevKey = if (page == 1) null else page - 1,
-                nextKey = if (locationResponse.countPage - 1 > page) {
+                nextKey = if (locationResponse.countPage > page && locationResponse.countPage != 1) {
                     page.plus(1)
                 } else {
                     null

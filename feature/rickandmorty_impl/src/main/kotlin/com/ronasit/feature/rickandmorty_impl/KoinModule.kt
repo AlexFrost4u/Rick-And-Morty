@@ -21,4 +21,3 @@ val rickAndMortyModule = module {
     }
 
 }
-

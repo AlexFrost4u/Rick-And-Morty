@@ -54,6 +54,7 @@ dependencies {
     implementation(project(ModuleDependency.UI.home))
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
     implementation(project(ModuleDependency.Feature.rickAndMorty_impl))
+    implementation(project(ModuleDependency.UI.location))
 
     implementation(Dependency.AndroidX.core)
     implementation(Dependency.AndroidX.appcompat)
@@ -68,4 +69,7 @@ dependencies {
     implementation(Dependency.Loggers.timber)
 
     implementation(Dependency.Koin.android)
+
+    implementation(Dependency.Loggers.prettyLogger)
+    implementation(Dependency.Loggers.timber)
 }

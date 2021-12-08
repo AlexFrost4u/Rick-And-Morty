@@ -11,14 +11,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
+import com.ronasit.feature.rickandmorty_api.models.Location
 import com.ronasit.location.list.R
 
-@Preview(showBackground = true)
 @Composable
-fun Location() {
+internal fun Location(location: Location) {
     val iconMap = mapOf(
         "Planet" to R.drawable.ic_planet_24,
         "Cluster" to R.drawable.ic_cluster_24,
@@ -45,7 +44,8 @@ fun Location() {
             ) {
                 Image(
                     painterResource(
-                        id = iconMap.getOrDefault(/*res.type*/"Planet",
+                        id = iconMap.getOrDefault(
+                            location.type,
                             android.R.drawable.stat_sys_warning
                         )
                     ),
@@ -59,13 +59,13 @@ fun Location() {
                 )
                 Column(Modifier.padding(start = 16.dp)) {
                     Text(
-                        /*res.name*/"Earth",
+                        location.name,
                         style = RickAndMortyTheme.typography.title5,
                         color = RickAndMortyTheme.colors.white,
                         modifier = Modifier.padding(top = 8.dp)
                     )
                     Text(
-                        /*res.type*/"Planet",
+                        location.type,
                         style = RickAndMortyTheme.typography.bodySmall,
                         color = RickAndMortyTheme.colors.primary,
                         modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)

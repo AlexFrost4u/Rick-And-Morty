@@ -19,7 +19,7 @@ import me.onebone.toolbar.ScrollStrategy
 import me.onebone.toolbar.rememberCollapsingToolbarScaffoldState
 
 @Composable
-fun ListToolBar(body: @Composable () -> Unit) {
+internal fun ListToolBar(body: @Composable () -> Unit) {
     val state = rememberCollapsingToolbarScaffoldState()
     CollapsingToolbarScaffold(
         toolbar = {

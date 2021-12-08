@@ -25,5 +25,7 @@ android {
     }
 }
 dependencies {
-    // TODO
+    implementation(project(ModuleDependency.Core.common))
+    implementation(Dependency.Other.paging)
+    implementation(Dependency.Loggers.timber)
 }

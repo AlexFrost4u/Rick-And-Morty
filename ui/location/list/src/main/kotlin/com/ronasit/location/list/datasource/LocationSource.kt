@@ -1,4 +1,4 @@
-package com.ronasit.location.list
+package com.ronasit.location.list.datasource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
@@ -8,7 +8,7 @@ import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
 
 class LocationSource(private val getLocations: GetLocations, private val text: String) : PagingSource<Int, Location>() {
     override fun getRefreshKey(state: PagingState<Int, Location>): Int? {
-        TODO("Not yet implemented")
+        return null
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Location> {
@@ -17,9 +17,9 @@ class LocationSource(private val getLocations: GetLocations, private val text: S
             val locationResponse = getLocations(page, text)
 
             LoadResult.Page(
-                data = locationResponse.location,
+                data = locationResponse.locations,
                 prevKey = if (page == 1) null else page - 1,
-                nextKey = if (locationResponse.countPage > page && locationResponse.countPage != 1) {
+                nextKey = if (locationResponse.countPage > page) {
                     page.plus(1)
                 } else {
                     null

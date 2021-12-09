@@ -1,4 +1,4 @@
-package com.ronasit.location.list
+package com.ronasit.location.list.ui
 
 import com.ronasit.feature.rickandmorty_api.model.Location
 

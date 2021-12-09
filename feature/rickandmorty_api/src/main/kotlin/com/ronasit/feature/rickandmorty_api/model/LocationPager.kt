@@ -1,6 +1,6 @@
 package com.ronasit.feature.rickandmorty_api.model
 
 data class LocationPager(
-    val location: List<Location>,
+    val locations: List<Location>,
     val countPage: Int
 )

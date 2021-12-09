@@ -1,4 +1,4 @@
-package com.ronasit.location.list.ui
+package com.ronasit.location.list.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -43,10 +43,7 @@ internal fun ListToolBar(body: @Composable () -> Unit) {
             )
             Text(
                 text = "Locations",
-                fontFamily = RickAndMortyTheme.typography.title2.fontFamily,
-                fontSize = RickAndMortyTheme.typography.title2.fontSize,
-                fontStyle = RickAndMortyTheme.typography.title2.fontStyle,
-                fontWeight = RickAndMortyTheme.typography.title2.fontWeight,
+                style = RickAndMortyTheme.typography.title2,
                 color = White,
                 modifier = Modifier
                     .road(Alignment.BottomStart, Alignment.BottomStart)

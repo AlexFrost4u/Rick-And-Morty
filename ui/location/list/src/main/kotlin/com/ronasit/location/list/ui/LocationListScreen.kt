@@ -4,14 +4,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.ronasit.core.ui.theme.RickAndMortyTheme
-import com.ronasit.location.list.ui.FilterButton
-import com.ronasit.location.list.ui.ListLocationItem
-import com.ronasit.location.list.ui.ListToolBar
-import com.ronasit.location.list.ui.SearchBar
+import com.ronasit.location.list.components.FilterButton
+import com.ronasit.location.list.components.ListLocationItem
+import com.ronasit.location.list.components.ListToolBar
+import com.ronasit.location.list.components.SearchBar
+import com.ronasit.location.list.ui.LocationListViewModel
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.compose.viewModel
 
@@ -19,8 +21,8 @@ import org.koin.androidx.compose.viewModel
 @Composable
 fun LocationListScreen() {
     val viewModel: LocationListViewModel by viewModel()
-    val state = viewModel.container.stateFlow.collectAsState().value
-    val location = viewModel.getLocationPagination().collectAsLazyPagingItems()
+    val state by viewModel.container.stateFlow.collectAsState()
+    val locations = viewModel.getLocationPagination().collectAsLazyPagingItems()
 
     ListToolBar(body = {
         Box(modifier = Modifier.background(RickAndMortyTheme.colors.blackBG)) {
@@ -35,7 +37,7 @@ fun LocationListScreen() {
                     FilterButton()
                 }
                 Box(modifier = Modifier.fillMaxSize()) {
-                    ListLocationItem(location)
+                    ListLocationItem(locations)
                 }
             }
         }

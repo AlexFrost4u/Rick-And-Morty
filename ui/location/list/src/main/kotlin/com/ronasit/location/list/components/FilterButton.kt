@@ -1,4 +1,4 @@
-package com.ronasit.location.list.ui
+package com.ronasit.location.list.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

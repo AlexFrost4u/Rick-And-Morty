@@ -1,4 +1,4 @@
-package com.ronasit.location.list
+package com.ronasit.location.list.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.paging.Pager
@@ -6,6 +6,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
+import com.ronasit.location.list.datasource.LocationSource
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.debounce

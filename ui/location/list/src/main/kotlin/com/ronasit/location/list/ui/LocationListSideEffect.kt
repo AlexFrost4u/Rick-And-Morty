@@ -1,4 +1,4 @@
-package com.ronasit.location.list
+package com.ronasit.location.list.ui
 
 sealed class LocationListSideEffect {
 

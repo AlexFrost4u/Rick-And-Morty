@@ -10,5 +10,5 @@ data class LocationResponse(
 )
 
 fun LocationResponse.toDomain(): LocationPager {
-    return LocationPager(location = results.map { item -> item.toDomain() }, countPage = info.pages)
+    return LocationPager(locations = results.map { item -> item.toDomain() }, countPage = info.pages)
 }

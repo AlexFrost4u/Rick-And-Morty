@@ -1,4 +1,4 @@
-package com.ronasit.location.list.ui
+package com.ronasit.location.list.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -11,15 +11,15 @@ import androidx.paging.compose.items
 import com.ronasit.feature.rickandmorty_api.model.Location
 
 @Composable
-internal fun ListLocationItem(location: LazyPagingItems<Location>) {
+internal fun ListLocationItem(locations: LazyPagingItems<Location>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
             .padding(bottom = 56.dp)
     ) {
-        items(location) { location ->
-            if (location != null) {
-                Location(location)
+        items(locations) { item ->
+            if (item != null) {
+                Location(item)
             }
         }
     }

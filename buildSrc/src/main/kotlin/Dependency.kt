@@ -15,6 +15,7 @@ object Dependency {
         const val activityCompose = "androidx.activity:activity-compose:1.4.0"
         const val core = "androidx.core:core-ktx:1.7.0"
         const val appcompat = "androidx.appcompat:appcompat:1.3.1"
+        const val paging = "androidx.paging:paging-compose:1.0.0-alpha14"
         const val material = "com.google.android.material:material:1.4.0"
 
         object Compose {
@@ -34,11 +35,11 @@ object Dependency {
     }
 
     object Squareup {
+        const val moshi = "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
+        const val moshiConverter = "com.squareup.retrofit2:converter-moshi:2.9.0"
         const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
         const val okhttp = "com.squareup.okhttp3:okhttp:4.9.2"
     }
-
-
 
     object Orbit {
         private const val version = "4.3.0"
@@ -51,9 +52,8 @@ object Dependency {
     object Other {
         const val coil = "io.coil-kt:coil-compose:1.4.0"
         const val insetter = "dev.chrisbanes.insetter:insetter:0.6.1"
-        const val paging = "androidx.paging:paging-compose:1.0.0-alpha14"
         const val toolbar = "me.onebone:toolbar-compose:2.3.0"
-        const val kotlinSerialization = "-org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1"
+        const val kotlinSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1"
         const val kotlinSerializeConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
     }
 

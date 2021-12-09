@@ -1,5 +1,10 @@
 package com.ronasit.feature.rickandmorty_impl.network
 
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.ronasit.feature.rickandmorty_impl.Constants
+import com.ronasit.feature.rickandmorty_impl.RickAndMortyService
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -25,15 +30,20 @@ fun buildOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
         .build()
 }
 
+@ExperimentalSerializationApi
 fun createRetrofit(okHttpClient: OkHttpClient, mediaType: MediaType): Retrofit.Builder {
+    val json = Json {
+        ignoreUnknownKeys = true
+        isLenient = true
+    }
+
     return Retrofit.Builder()
         .baseUrl(Constants.baseUrl)
-        .addConverterFactory(Json.asConverterFactory(mediaType))
+        .addConverterFactory(json.asConverterFactory(mediaType))
         .client(okHttpClient)
 }
 
 fun getRickAndMortyService(retrofit: Retrofit.Builder): RickAndMortyService {
-    Timber.i("service")
     return retrofit
         .build()
         .create(RickAndMortyService::class.java)

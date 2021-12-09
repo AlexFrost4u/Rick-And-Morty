@@ -27,6 +27,7 @@ android {
 }
 dependencies {
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
+
     implementation(Dependency.Koin.android)
     implementation(Dependency.Koin.core)
     implementation(Dependency.Squareup.okhttp)
@@ -36,4 +37,6 @@ dependencies {
     implementation(Dependency.Other.kotlinSerializeConverter)
     implementation(Dependency.Squareup.retrofit)
     implementation(Dependency.Other.paging)
+    implementation(Dependency.AndroidX.paging)
+    implementation(Dependency.Loggers.prettyLogger)
 }

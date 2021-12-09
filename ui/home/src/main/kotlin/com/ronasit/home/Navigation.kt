@@ -4,17 +4,19 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import com.ronasit.episode.list.CharacterListScreen
-import com.ronasit.episode.list.EpisodeListScreen
-import com.ronasit.location.list.LocationListScreen
+import com.ronasit.character.list.ui.CharacterListScreen
+import com.ronasit.character.list.EpisodeListScreen
+import com.ronasit.location.list.ui.LocationListScreen
 import com.ronasit.navigation.NavigationItem
 import kotlinx.coroutines.FlowPreview
 
 @FlowPreview
+@ExperimentalFoundationApi
 @ExperimentalAnimationApi
 @Composable
 internal fun Navigation(navController: NavHostController) {

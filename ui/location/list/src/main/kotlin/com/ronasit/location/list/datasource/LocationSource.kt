@@ -4,9 +4,9 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.orhanobut.logger.Logger
 import com.ronasit.feature.rickandmorty_api.model.Location
-import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
+import com.ronasit.feature.rickandmorty_api.usecase.GetLocationsUseCase
 
-class LocationSource(private val getLocations: GetLocations, private val text: String) : PagingSource<Int, Location>() {
+class LocationSource(private val getLocationsUseCase: GetLocationsUseCase, private val text: String) : PagingSource<Int, Location>() {
     override fun getRefreshKey(state: PagingState<Int, Location>): Int? {
         return null
     }
@@ -14,7 +14,7 @@ class LocationSource(private val getLocations: GetLocations, private val text: S
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Location> {
         return try {
             val page = params.key ?: 1
-            val locationResponse = getLocations(page, text)
+            val locationResponse = getLocationsUseCase(page, text)
 
             LoadResult.Page(
                 data = locationResponse.locations,
@@ -30,5 +30,4 @@ class LocationSource(private val getLocations: GetLocations, private val text: S
             LoadResult.Error(e)
         }
     }
-
 }

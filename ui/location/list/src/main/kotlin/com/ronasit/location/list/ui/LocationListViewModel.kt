@@ -5,7 +5,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.ronasit.feature.rickandmorty_api.model.Location
-import com.ronasit.feature.rickandmorty_api.use_cases.GetLocations
+import com.ronasit.feature.rickandmorty_api.usecase.GetLocationsUseCase
 import com.ronasit.location.list.datasource.LocationSource
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
@@ -16,7 +16,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class LocationListViewModel(
-    private val getLocations: GetLocations
+    private val getLocationsUseCase: GetLocationsUseCase
 ) : ViewModel(), ContainerHost<LocationListState, LocationListSideEffect> {
 
     override val container = container<LocationListState, LocationListSideEffect>(LocationListState())
@@ -26,7 +26,7 @@ class LocationListViewModel(
         val debounce = 400L
 
         return Pager(PagingConfig(pageSize = 20)) {
-            LocationSource(getLocations, container.stateFlow.value.searchText)
+            LocationSource(getLocationsUseCase, container.stateFlow.value.searchText)
         }.flow.debounce(debounce)
     }
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.core.view.WindowCompat
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.home.MainContainer
@@ -12,10 +13,11 @@ import kotlinx.coroutines.FlowPreview
 @FlowPreview
 @ExperimentalAnimationApi
 class MainActivity : ComponentActivity() {
+    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_SplashScreen)
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false);
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             RickAndMortyTheme {
                 MainContainer()

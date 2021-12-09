@@ -32,11 +32,9 @@ dependencies {
     implementation(Dependency.Koin.core)
     implementation(Dependency.Squareup.okhttp)
     implementation(Dependency.Loggers.okhttpLogging)
-    implementation(Dependency.Loggers.timber)
-    implementation(Dependency.Other.kotlinSerialization)
     implementation(Dependency.Other.kotlinSerializeConverter)
+    implementation(Dependency.Other.kotlinSerialization)
     implementation(Dependency.Squareup.retrofit)
-    implementation(Dependency.Other.paging)
     implementation(Dependency.AndroidX.paging)
     implementation(Dependency.Loggers.prettyLogger)
 }

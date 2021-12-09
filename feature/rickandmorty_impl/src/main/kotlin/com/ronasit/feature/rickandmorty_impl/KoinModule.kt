@@ -1,19 +1,20 @@
 package com.ronasit.feature.rickandmorty_impl
 
-import com.ronasit.feature.rickandmorty_impl.Network.buildMoshi
-import com.ronasit.feature.rickandmorty_impl.Network.createRetrofit
-import com.ronasit.feature.rickandmorty_impl.Network.getRickAndMortyService
+import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
+import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
+import com.ronasit.feature.rickandmorty_api.usecase.GetCharactersUseCase
+import com.ronasit.feature.rickandmorty_api.usecase.GetLocationsUseCase
+import com.ronasit.feature.rickandmorty_impl.network.*
+import com.ronasit.feature.rickandmorty_impl.repository.*
+import com.ronasit.feature.rickandmorty_impl.repository.LocationRepositoryImpl
+import kotlinx.serialization.ExperimentalSerializationApi
 import org.koin.dsl.module
 
 @ExperimentalSerializationApi
 val rickAndMortyModule = module {
-    single { buildOkHttpClient(get()) }
-    single { createRetrofit(get(),get()) }
-    single { getRickAndMortyService(get()) }
-    single { GetCharacters(get()) }
-    single { GetLocations(get()) }
-    single { createInterceptor() }
-    single { getMediaType() }
+    single { getRickAndMortyService() }
+    single { GetCharactersUseCase(get()) }
+    single { GetLocationsUseCase(get()) }
 
     single<LocationRepository> {
         LocationRepositoryImpl(get())

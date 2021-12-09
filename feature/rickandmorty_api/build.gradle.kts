@@ -25,5 +25,6 @@ android {
     }
 }
 dependencies {
-    // TODO
+    implementation(Dependency.AndroidX.paging)
+    implementation(Dependency.Loggers.timber)
 }

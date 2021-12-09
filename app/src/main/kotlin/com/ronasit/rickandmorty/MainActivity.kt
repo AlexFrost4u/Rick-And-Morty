@@ -7,7 +7,9 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.core.view.WindowCompat
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.home.MainContainer
+import kotlinx.coroutines.FlowPreview
 
+@FlowPreview
 @ExperimentalAnimationApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

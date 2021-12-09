@@ -7,7 +7,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
+import kotlinx.coroutines.FlowPreview
 
+@FlowPreview
 @ExperimentalAnimationApi
 @Composable
 fun MainContainer() {
@@ -23,6 +25,7 @@ fun MainContainer() {
     }
 }
 
+@FlowPreview
 @ExperimentalAnimationApi
 @Preview(showBackground = true)
 @Composable

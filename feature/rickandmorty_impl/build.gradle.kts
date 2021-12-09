@@ -1,5 +1,6 @@
 plugins {
     id(Plugin.androidLibrary)
+    kotlin(Plugin.kotlinSerialization)
     kotlin(Plugin.android)
 }
 
@@ -30,6 +31,11 @@ dependencies {
     implementation(Dependency.Koin.android)
     implementation(Dependency.Koin.core)
     implementation(Dependency.Squareup.retrofit)
-    implementation(Dependency.Squareup.moshi)
-    implementation(Dependency.Squareup.moshiConverter)
+    implementation(Dependency.Squareup.okhttp)
+    implementation(Dependency.Loggers.okhttpLogging)
+    implementation(Dependency.AndroidX.paging)
+    implementation(Dependency.Loggers.prettyLogger)
+    implementation(Dependency.Loggers.timber)
+    implementation(Dependency.Other.kotlinSerializeConverter)
+    implementation(Dependency.Other.kotlinSerialization)
 }

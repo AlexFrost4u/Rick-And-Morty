@@ -10,6 +10,7 @@ object ModuleDependency {
         const val character = "$directory:character:list"
         const val location = "$directory:location:list"
         const val episode = "$directory:episode:list"
+        const val character_detail = "$directory:character_detail"
     }
 
     object Feature {

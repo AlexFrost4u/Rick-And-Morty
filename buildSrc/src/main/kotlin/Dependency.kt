@@ -75,4 +75,5 @@ object Dependency {
         const val ui = "androidx.navigation:navigation-ui-ktx:$version"
         const val compose = "androidx.navigation:navigation-compose:2.4.0-beta02"
     }
+
 }

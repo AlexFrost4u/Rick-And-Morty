@@ -1,10 +1,9 @@
-package com.ronasit.location.list
+package com.ronasit.location.list.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -13,7 +12,6 @@ import com.ronasit.location.list.components.FilterButton
 import com.ronasit.location.list.components.ListLocationItem
 import com.ronasit.location.list.components.ListToolBar
 import com.ronasit.location.list.components.SearchBar
-import com.ronasit.location.list.ui.LocationListViewModel
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.compose.viewModel
 
@@ -21,7 +19,7 @@ import org.koin.androidx.compose.viewModel
 @Composable
 fun LocationListScreen() {
     val viewModel: LocationListViewModel by viewModel()
-    val state by viewModel.container.stateFlow.collectAsState()
+    val state = viewModel.container.stateFlow.collectAsState().value
     val locations = viewModel.getLocationPagination().collectAsLazyPagingItems()
 
     ListToolBar(body = {

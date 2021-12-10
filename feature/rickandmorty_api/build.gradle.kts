@@ -25,6 +25,7 @@ android {
     }
 }
 dependencies {
-    implementation(Dependency.AndroidX.paging)
+    implementation(project(ModuleDependency.Core.common))
     implementation(Dependency.Loggers.timber)
+    implementation(Dependency.AndroidX.paging)
 }

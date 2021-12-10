@@ -1,9 +1,9 @@
-package com.ronasit.feature.rickandmorty_api.use_cases
+package com.ronasit.feature.rickandmorty_api.usecase
 
 import com.ronasit.feature.rickandmorty_api.model.LocationPager
 import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
 
-class GetLocations(
+class GetLocationsUseCase(
     private val locationRepository: LocationRepository
 ) {
     suspend operator fun invoke(page: Int, name: String): LocationPager {

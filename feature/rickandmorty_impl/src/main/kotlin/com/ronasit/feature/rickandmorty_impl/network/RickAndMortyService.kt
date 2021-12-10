@@ -5,11 +5,11 @@ import com.ronasit.feature.rickandmorty_impl.model.LocationResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ApiService {
+interface RickAndMortyService {
     @GET("character")
     suspend fun getAllCharacters(
         @Query("page") pageNumber: Int,
-        @Query("name") searchByName:String
+        @Query("name") nameCharacter:String
     ): CharacterResponse
 
     @GET("location")

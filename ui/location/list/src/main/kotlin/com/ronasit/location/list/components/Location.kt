@@ -2,6 +2,7 @@ package com.ronasit.location.list.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -12,12 +13,13 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.location.list.R
 
 @Composable
-internal fun Location(location: Location) {
+internal fun Location(location: Location,navController: NavController) {
     val iconMap = mapOf(
         "Planet" to R.drawable.ic_planet_24,
         "Cluster" to R.drawable.ic_cluster_24,
@@ -42,6 +44,7 @@ internal fun Location(location: Location) {
                 Modifier
                     .padding(8.dp)
                     .fillMaxSize()
+                    .clickable { navController.navigate("detail") }
             ) {
                 Image(
                     painterResource(

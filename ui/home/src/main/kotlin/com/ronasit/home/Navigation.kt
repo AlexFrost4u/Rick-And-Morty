@@ -13,6 +13,7 @@ import com.ronasit.character.list.ui.CharacterListScreen
 import com.ronasit.character.list.EpisodeListScreen
 import com.ronasit.location.list.ui.LocationListScreen
 import com.ronasit.navigation.NavigationItem
+import com.ronasit.ui.location.detail.ui.LocationDetailScreen
 import kotlinx.coroutines.FlowPreview
 
 @FlowPreview
@@ -33,11 +34,15 @@ internal fun Navigation(navController: NavHostController) {
         }
 
         composable(NavigationItem.Location.route) {
-            LocationListScreen()
+            LocationListScreen(navController = navController)
         }
 
         composable(NavigationItem.Episode.route) {
             EpisodeListScreen()
+        }
+
+        composable("detail") {
+            LocationDetailScreen()
         }
     }
 }

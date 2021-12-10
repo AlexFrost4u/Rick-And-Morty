@@ -6,12 +6,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import com.ronasit.feature.rickandmorty_api.model.Location
 
 @Composable
-internal fun ListLocationItem(locations: LazyPagingItems<Location>) {
+internal fun ListLocationItem(locations: LazyPagingItems<Location>,navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
@@ -19,7 +20,7 @@ internal fun ListLocationItem(locations: LazyPagingItems<Location>) {
     ) {
         items(locations) { item ->
             if (item != null) {
-                Location(item)
+                Location(item, navController = navController)
             }
         }
     }

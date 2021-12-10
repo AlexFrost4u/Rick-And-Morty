@@ -33,11 +33,8 @@ dependencies {
     implementation(project(ModuleDependency.Core.ui))
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
     implementation(Dependency.Orbit.viewModel)
-    implementation(Dependency.AndroidX.paging)
     implementation(Dependency.Koin.android)
     implementation(Dependency.Koin.compose)
-    implementation(Dependency.Other.toolbar)
     implementation(Dependency.Loggers.prettyLogger)
     implementation(Dependency.Accompanist.insets)
-    implementation(Dependency.Navigation.compose)
 }

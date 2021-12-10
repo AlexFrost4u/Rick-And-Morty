@@ -5,7 +5,7 @@ import com.ronasit.feature.rickandmorty_impl.model.LocationResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface RickAndMortyService {
+interface ApiService {
     @GET("character")
     suspend fun getAllCharacters(
         @Query("page") pageNumber: Int,

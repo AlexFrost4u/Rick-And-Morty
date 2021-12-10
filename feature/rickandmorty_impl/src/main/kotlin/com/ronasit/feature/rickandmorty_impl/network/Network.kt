@@ -43,10 +43,10 @@ fun createRetrofit(): Retrofit.Builder {
 }
 
 @ExperimentalSerializationApi
-fun getRickAndMortyService(): RickAndMortyService {
+fun getRickAndMortyService(): ApiService {
     val retrofit = createRetrofit()
     return retrofit
         .build()
-        .create(RickAndMortyService::class.java)
+        .create(ApiService::class.java)
 }
 

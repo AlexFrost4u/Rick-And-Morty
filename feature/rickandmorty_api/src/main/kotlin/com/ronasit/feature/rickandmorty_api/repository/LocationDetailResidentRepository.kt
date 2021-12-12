@@ -1,8 +1,7 @@
 package com.ronasit.feature.rickandmorty_api.repository
 
-import com.ronasit.feature.rickandmorty_api.model.LocationDetailResidentList
-
+import com.ronasit.feature.rickandmorty_api.model.Character
 
 interface LocationDetailResidentRepository {
-    suspend fun getResidentsById(id: String): LocationDetailResidentList
+    suspend fun getResidentsById(id: String): List<Character>
 }

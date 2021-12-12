@@ -7,10 +7,12 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import com.ronasit.character.list.ui.CharacterListScreen
 import com.ronasit.character.list.EpisodeListScreen
+import com.ronasit.character.list.ui.CharacterListScreen
 import com.ronasit.location.list.ui.LocationListScreen
 import com.ronasit.navigation.NavigationItem
 import com.ronasit.ui.location.detail.ui.LocationDetailScreen
@@ -41,8 +43,11 @@ internal fun Navigation(navController: NavHostController) {
             EpisodeListScreen()
         }
 
-        composable("detail") {
-            LocationDetailScreen()
+        composable(
+            "locationDetail/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.IntType })
+        ) { backStackEntry ->
+            LocationDetailScreen(navController, backStackEntry.arguments?.getInt("id"))
         }
     }
 }

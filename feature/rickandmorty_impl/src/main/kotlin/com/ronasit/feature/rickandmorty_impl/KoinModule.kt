@@ -4,8 +4,8 @@ import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
 import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
 import com.ronasit.feature.rickandmorty_api.usecase.GetCharactersUseCase
 import com.ronasit.feature.rickandmorty_api.usecase.GetLocationsUseCase
-import com.ronasit.feature.rickandmorty_impl.network.*
-import com.ronasit.feature.rickandmorty_impl.repository.*
+import com.ronasit.feature.rickandmorty_impl.network.getRickAndMortyService
+import com.ronasit.feature.rickandmorty_impl.repository.CharacterRepositoryImpl
 import com.ronasit.feature.rickandmorty_impl.repository.LocationRepositoryImpl
 import kotlinx.serialization.ExperimentalSerializationApi
 import org.koin.dsl.module

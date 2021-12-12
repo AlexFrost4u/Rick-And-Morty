@@ -25,7 +25,7 @@ class RickAndMortyApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@RickAndMortyApplication)
-            modules(listOf(rickAndMortyModule,characterListModule,locationListModule))
+            modules(listOf(rickAndMortyModule, characterListModule, locationListModule))
         }
     }
 }

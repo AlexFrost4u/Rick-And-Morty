@@ -19,7 +19,7 @@ import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.location.list.R
 
 @Composable
-internal fun Location(location: Location,navController: NavController) {
+internal fun Location(location: Location, navController: NavController) {
     val iconMap = mapOf(
         "Planet" to R.drawable.ic_planet_24,
         "Cluster" to R.drawable.ic_cluster_24,
@@ -44,7 +44,7 @@ internal fun Location(location: Location,navController: NavController) {
                 Modifier
                     .padding(8.dp)
                     .fillMaxSize()
-                    .clickable { navController.navigate("detail") }
+                    .clickable { navController.navigate("locationDetail/${location.id}") }
             ) {
                 Image(
                     painterResource(

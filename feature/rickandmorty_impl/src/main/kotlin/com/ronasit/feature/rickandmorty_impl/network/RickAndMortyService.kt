@@ -9,7 +9,7 @@ interface RickAndMortyService {
     @GET("character")
     suspend fun getAllCharacters(
         @Query("page") pageNumber: Int,
-        @Query("name") nameCharacter:String
+        @Query("name") nameCharacter: String
     ): CharacterResponse
 
     @GET("location")

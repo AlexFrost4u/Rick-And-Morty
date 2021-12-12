@@ -12,7 +12,7 @@ import androidx.paging.compose.items
 import com.ronasit.feature.rickandmorty_api.model.Location
 
 @Composable
-internal fun ListLocationItem(locations: LazyPagingItems<Location>,navController: NavController) {
+internal fun ListLocationItem(locations: LazyPagingItems<Location>, navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()

@@ -2,7 +2,6 @@ package com.ronasit.ui.location.detail.ui
 
 import com.ronasit.feature.rickandmorty_api.model.Character
 import com.ronasit.feature.rickandmorty_api.model.LocationDetail
-import com.ronasit.feature.rickandmorty_api.model.LocationDetailResidentList
 
 data class LocationDetailState(
     val isLoading: Boolean = false,

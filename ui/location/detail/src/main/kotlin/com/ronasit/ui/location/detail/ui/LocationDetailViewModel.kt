@@ -20,9 +20,11 @@ class LocationDetailViewModel(
         reduce {
             state.copy(locationDetail = response)
         }
-        val responseResident = locationDetailResidentRepository.getResidentsById(response.residents)
-        reduce {
-            state.copy(residentList = responseResident)
+        if (response.residents.isNotEmpty()) {
+            val responseResident = locationDetailResidentRepository.getResidentsById(response.residents)
+            reduce {
+                state.copy(residentList = responseResident)
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
@@ -24,12 +25,19 @@ import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.insets.statusBarsPadding
+import com.orhanobut.logger.Logger
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.ui.location.detail.R
+import org.koin.androidx.compose.viewModel
 
 @ExperimentalFoundationApi
 @Composable
-fun LocationDetailScreen(navController: NavController, int: Int?) {
+fun LocationDetailScreen(navController: NavController, id: Int?) {
+    val viewModel: LocationDetailViewModel by viewModel()
+    val state = viewModel.container.stateFlow.collectAsState()
+    viewModel.getLocationDetail(id!!)
+    Logger.e(state.value.locationDetail.toString())
+    Logger.e(state.value.residentList.toString())
     RickAndMortyTheme {
         Scaffold(
             topBar = {
@@ -60,7 +68,8 @@ fun LocationDetailScreen(navController: NavController, int: Int?) {
                     Column(
                         Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 24.dp)) {
+                            .padding(horizontal = 24.dp)
+                    ) {
                         Box(
                             modifier = Modifier
                                 .align(CenterHorizontally)
@@ -88,7 +97,8 @@ fun LocationDetailScreen(navController: NavController, int: Int?) {
                     Column(
                         Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 24.dp)) {
+                            .padding(horizontal = 24.dp)
+                    ) {
                         Text(
                             "Info",
                             style = RickAndMortyTheme.typography.title5,
@@ -153,7 +163,8 @@ fun LocationDetailScreen(navController: NavController, int: Int?) {
                     Column(
                         Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 24.dp)) {
+                            .padding(horizontal = 24.dp)
+                    ) {
                         Text(
                             "Residents",
                             style = RickAndMortyTheme.typography.title5,

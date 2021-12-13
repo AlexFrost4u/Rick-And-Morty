@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.flowlayout.FlowRow
+import com.google.accompanist.insets.navigationBarsPadding
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.feature.rickandmorty_api.model.Character
 
@@ -19,7 +20,7 @@ internal fun ResidentList(list: List<Character>?) {
     FlowRow(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 56.dp, top = 16.dp, start = 8.dp, end = 24.dp)
+            .padding(bottom = 64.dp, top = 16.dp, start = 8.dp, end = 24.dp).navigationBarsPadding()
     ) {
         if (list != null) {
             repeat(list.size) { index ->

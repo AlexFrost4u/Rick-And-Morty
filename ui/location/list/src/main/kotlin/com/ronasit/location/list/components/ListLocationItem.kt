@@ -9,6 +9,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
+import com.google.accompanist.insets.navigationBarsPadding
 import com.ronasit.feature.rickandmorty_api.model.Location
 
 @Composable
@@ -16,7 +17,7 @@ internal fun ListLocationItem(locations: LazyPagingItems<Location>, navControlle
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 56.dp)
+            .padding(bottom = 64.dp).navigationBarsPadding()
     ) {
         items(locations) { item ->
             if (item != null) {

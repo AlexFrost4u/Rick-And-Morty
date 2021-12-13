@@ -5,7 +5,6 @@ import com.ronasit.feature.rickandmorty_api.repository.LocationDetailRepository
 import com.ronasit.feature.rickandmorty_api.repository.LocationDetailResidentRepository
 import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
 import com.ronasit.feature.rickandmorty_api.usecase.GetCharactersUseCase
-import com.ronasit.feature.rickandmorty_api.usecase.GetLocationDetailUseCase
 import com.ronasit.feature.rickandmorty_api.usecase.GetLocationsUseCase
 import com.ronasit.feature.rickandmorty_impl.network.getRickAndMortyService
 import com.ronasit.feature.rickandmorty_impl.repository.CharacterRepositoryImpl
@@ -20,7 +19,6 @@ val rickAndMortyModule = module {
     single { getRickAndMortyService() }
     single { GetCharactersUseCase(get()) }
     single { GetLocationsUseCase(get()) }
-    single { GetLocationDetailUseCase(get()) }
 
     single<LocationRepository> {
         LocationRepositoryImpl(get())

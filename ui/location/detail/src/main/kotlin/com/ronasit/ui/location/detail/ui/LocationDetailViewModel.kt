@@ -8,14 +8,18 @@ import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
-
 class LocationDetailViewModel(
     private val locationDetailRepository: LocationDetailRepository,
-    private val locationDetailResidentRepository: LocationDetailResidentRepository
+    private val locationDetailResidentRepository: LocationDetailResidentRepository,
+    private val id: Int
 ) : ViewModel(), ContainerHost<LocationDetailState, LocationDetailSideEffect> {
-    override val container = container<LocationDetailState, LocationDetailSideEffect>(LocationDetailState())
+    override val container = container<LocationDetailState, LocationDetailSideEffect>(LocationDetailState()) { state ->
+        if (state.locationDetail == null) {
+            getLocationDetail(id)
+        }
+    }
 
-    fun getLocationDetail(id: Int) = intent {
+    private fun getLocationDetail(id: Int?) = intent {
         val response = locationDetailRepository.getLocationById(id)
         reduce {
             state.copy(locationDetail = response)

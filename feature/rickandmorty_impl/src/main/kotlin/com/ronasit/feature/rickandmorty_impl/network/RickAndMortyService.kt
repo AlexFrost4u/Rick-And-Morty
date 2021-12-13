@@ -23,7 +23,7 @@ interface RickAndMortyService {
 
     @GET("location/{id}")
     suspend fun getLocationById(
-        @Path("id") id: Int
+        @Path("id") id: Int?
     ): LocationDetailResponse
 
     @GET("character/{id}")

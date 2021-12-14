@@ -20,7 +20,8 @@ internal fun ResidentList(list: List<Character>?) {
     FlowRow(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 64.dp, top = 16.dp, start = 8.dp, end = 24.dp).navigationBarsPadding()
+            .padding(bottom = 64.dp, top = 16.dp, start = 8.dp, end = 24.dp)
+            .navigationBarsPadding()
     ) {
         if (list != null) {
             repeat(list.size) { index ->

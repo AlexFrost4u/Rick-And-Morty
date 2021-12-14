@@ -30,52 +30,50 @@ internal fun Location(location: Location, navController: NavController) {
         "Fantasy town" to R.drawable.ic_fantasy_town_24,
         "Dream" to R.drawable.ic_dream_24,
     )
-
-    RickAndMortyTheme {
-        Box(
+    Box(
+        Modifier
+            .padding(top = 16.dp, start = 24.dp, end = 24.dp)
+            .fillMaxWidth()
+            .height(80.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .background(color = RickAndMortyTheme.colors.blackCard, shape = RoundedCornerShape(16.dp))
+            .clickable { navController.navigate("locationDetail/${location.id}") }
+    ) {
+        Row(
             Modifier
-                .padding(top = 16.dp, start = 24.dp, end = 24.dp)
-                .fillMaxWidth()
-                .height(80.dp)
-                .clip(RoundedCornerShape(16.dp))
-                .background(color = RickAndMortyTheme.colors.blackCard, shape = RoundedCornerShape(16.dp))
+                .padding(8.dp)
+                .fillMaxSize()
         ) {
-            Row(
-                Modifier
-                    .padding(8.dp)
-                    .fillMaxSize()
-                    .clickable { navController.navigate("locationDetail/${location.id}") }
-            ) {
-                Image(
-                    painterResource(
-                        id = iconMap.getOrDefault(
-                            location.type,
-                            android.R.drawable.stat_sys_warning
-                        )
-                    ),
-                    contentDescription = null,
-                    contentScale = ContentScale.None,
-                    colorFilter = ColorFilter.tint(color = RickAndMortyTheme.colors.grayDark),
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(16.dp))
-                        .size(64.dp)
-                        .background(RickAndMortyTheme.colors.blackBG)
-                )
-                Column(Modifier.padding(start = 16.dp)) {
-                    Text(
-                        location.name,
-                        style = RickAndMortyTheme.typography.title5,
-                        color = RickAndMortyTheme.colors.white,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                    Text(
+            Image(
+                painterResource(
+                    id = iconMap.getOrDefault(
                         location.type,
-                        style = RickAndMortyTheme.typography.bodySmall,
-                        color = RickAndMortyTheme.colors.primary,
-                        modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
+                        android.R.drawable.stat_sys_warning
                     )
-                }
+                ),
+                contentDescription = null,
+                contentScale = ContentScale.None,
+                colorFilter = ColorFilter.tint(color = RickAndMortyTheme.colors.grayDark),
+                modifier = Modifier
+                    .clip(RoundedCornerShape(16.dp))
+                    .size(64.dp)
+                    .background(RickAndMortyTheme.colors.blackBG)
+            )
+            Column(Modifier.padding(start = 16.dp)) {
+                Text(
+                    location.name,
+                    style = RickAndMortyTheme.typography.title5,
+                    color = RickAndMortyTheme.colors.white,
+                    modifier = Modifier.padding(top = 8.dp)
+                )
+                Text(
+                    location.type,
+                    style = RickAndMortyTheme.typography.bodySmall,
+                    color = RickAndMortyTheme.colors.primary,
+                    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
+                )
             }
         }
     }
 }
+

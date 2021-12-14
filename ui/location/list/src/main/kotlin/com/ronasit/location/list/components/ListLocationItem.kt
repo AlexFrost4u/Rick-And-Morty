@@ -17,7 +17,8 @@ internal fun ListLocationItem(locations: LazyPagingItems<Location>, navControlle
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 64.dp).navigationBarsPadding()
+            .padding(bottom = 64.dp)
+            .navigationBarsPadding()
     ) {
         items(locations) { item ->
             if (item != null) {

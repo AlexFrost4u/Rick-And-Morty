@@ -26,23 +26,22 @@ fun LocationDetailScreen(navController: NavController, id: Int?) {
     val state = viewModel.container.stateFlow.collectAsState()
     val scroll = rememberScrollState()
 
-    RickAndMortyTheme {
-        Scaffold(
-            topBar = {
-                TopBar(navController = navController)
-            }
+    Scaffold(
+        topBar = {
+            TopBar(navController = navController)
+        }
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(RickAndMortyTheme.colors.blackBG)
+                .verticalScroll(scroll)
         ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(RickAndMortyTheme.colors.blackBG)
-                    .verticalScroll(scroll)
-            ) {
-                ImageNameColumn(state.value.locationDetail?.name, state.value.locationDetail?.type)
-                InfoColumn(state.value.locationDetail?.type, state.value.locationDetail?.dimension)
+            ImageNameColumn(state.value.locationDetail?.name, state.value.locationDetail?.type)
+            InfoColumn(state.value.locationDetail?.type, state.value.locationDetail?.dimension)
+
+            if (state.value.residentList?.isNotEmpty() == true)
                 ResidentsColumn(state.value.residentList)
-            }
         }
     }
 }
-

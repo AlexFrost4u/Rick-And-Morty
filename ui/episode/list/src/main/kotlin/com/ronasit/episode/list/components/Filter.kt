@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 internal fun Filter() {
-    val season = listOf("All","Season 1","Season 2","Season 3","Season 4","Season 5")
+    val season = listOf("All", "Season 1", "Season 2", "Season 3", "Season 4", "Season 5")
 
     Row(modifier = Modifier.padding(top = 16.dp)) {
         LazyRow() {

@@ -27,6 +27,9 @@ val rickAndMortyModule = module {
     single<EpisodeRepository> {
         EpisodeRepositoryImpl(get())
     }
+    single<EpisodeDetailRepository> {
+        EpisodeDetailRepositoryImpl(get())
+    }
 
     single<LocationDetailRepository> {
         LocationDetailRepositoryImpl(get())

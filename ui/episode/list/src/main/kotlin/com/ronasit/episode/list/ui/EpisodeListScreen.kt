@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.episode.list.components.EpisodeList
@@ -21,9 +22,8 @@ import org.koin.androidx.compose.viewModel
 
 @FlowPreview
 @ExperimentalFoundationApi
-@Preview
 @Composable
-fun EpisodeListScreen() {
+fun EpisodeListScreen(navController: NavController) {
     val viewModel: EpisodeListViewModel by viewModel()
     val state = viewModel.container.stateFlow.collectAsState().value
     val episodes = viewModel.getEpisodePagination().collectAsLazyPagingItems()
@@ -37,7 +37,7 @@ fun EpisodeListScreen() {
             Column {
                 SearchBar(text = state.searchText, onTextChange = { viewModel.updateSearchText(it) })
                 Filter()
-                EpisodeList(episodes)
+                EpisodeList(navController, episodes)
             }
         }
     })

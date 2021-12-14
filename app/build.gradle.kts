@@ -58,6 +58,7 @@ dependencies {
     implementation(project(ModuleDependency.UI.location))
     implementation(project(ModuleDependency.UI.episode))
     implementation(project(ModuleDependency.UI.locationDetail))
+    implementation(project(ModuleDependency.UI.episodeDetail))
 
 
     implementation(Dependency.AndroidX.core)

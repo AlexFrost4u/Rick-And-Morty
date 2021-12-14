@@ -7,6 +7,7 @@ import com.ronasit.character.list.characterListModule
 import com.ronasit.episode.list.episodeListModule
 import com.ronasit.feature.rickandmorty_impl.rickAndMortyModule
 import com.ronasit.location.list.locationListModule
+import com.ronasit.ui.episode.detail.episodeDetailModule
 import com.ronasit.ui.location.detail.locationDetailModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -33,7 +34,8 @@ class RickAndMortyApplication : Application() {
                     characterListModule,
                     episodeListModule,
                     locationListModule,
-                    locationDetailModule
+                    locationDetailModule,
+                    episodeDetailModule
                 )
             )
         }

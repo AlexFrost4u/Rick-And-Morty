@@ -1,0 +1,19 @@
+package com.ronasit.episode.list.components
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+
+import androidx.compose.ui.unit.dp
+import com.ronasit.core.ui.theme.RickAndMortyTheme
+
+@Composable
+internal fun FilterItem(text:String) {
+    Box(Modifier.padding(horizontal = 8.dp).background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))){
+        Text(text, color = RickAndMortyTheme.colors.grayDark, style = RickAndMortyTheme.typography.bodyDefault,modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
+    }
+}

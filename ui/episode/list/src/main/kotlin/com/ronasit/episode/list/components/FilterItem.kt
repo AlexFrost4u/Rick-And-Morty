@@ -12,8 +12,17 @@ import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 
 @Composable
-internal fun FilterItem(text:String) {
-    Box(Modifier.padding(horizontal = 8.dp).background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))){
-        Text(text, color = RickAndMortyTheme.colors.grayDark, style = RickAndMortyTheme.typography.bodyDefault,modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
+internal fun FilterItem(text: String) {
+    Box(
+        Modifier
+            .padding(horizontal = 8.dp)
+            .background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))
+    ) {
+        Text(
+            text,
+            color = RickAndMortyTheme.colors.grayDark,
+            style = RickAndMortyTheme.typography.bodyDefault,
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+        )
     }
 }

@@ -1,6 +1,7 @@
 package com.ronasit.feature.rickandmorty_impl.model
 
 
+import com.ronasit.feature.rickandmorty_api.model.Episode
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -8,16 +9,21 @@ import kotlinx.serialization.Serializable
 data class EpisodeResult(
     @SerialName("air_date")
     val airDate: String,
-    @SerialName("characters")
     val characters: List<String>,
-    @SerialName("created")
     val created: String,
-    @SerialName("episode")
     val episode: String,
-    @SerialName("id")
     val id: Int,
-    @SerialName("name")
     val name: String,
-    @SerialName("url")
     val url: String
 )
+
+fun EpisodeResult.toDomain(): Episode {
+    val se = episode.replace("S", "").replace("E", " ").split(" ")
+    return Episode(
+        id = id,
+        name = name,
+        airDate = airDate,
+        season = se[0].toInt().toString(),
+        episode = se[1].toInt().toString()
+    )
+}

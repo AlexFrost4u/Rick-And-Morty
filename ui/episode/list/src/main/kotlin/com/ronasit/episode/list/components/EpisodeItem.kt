@@ -9,20 +9,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
+import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
-internal fun EpisodeItem(ep: String,se:String) {
+internal fun EpisodeItem(episode: Episode) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(96.dp)
-            .padding(start = 16.dp, bottom = 16.dp,end = 16.dp)
+            .padding(start = 16.dp, bottom = 16.dp, end = 16.dp)
             .background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))
     ) {
         Column(Modifier.fillMaxSize()) {
             Row(Modifier.fillMaxWidth()) {
                 Text(
-                    "Pilot",
+                    episode.name,
                     style = RickAndMortyTheme.typography.title5,
                     color = RickAndMortyTheme.colors.white,
                     modifier = Modifier.padding(start = 16.dp, top = 16.dp)
@@ -30,7 +31,7 @@ internal fun EpisodeItem(ep: String,se:String) {
             }
             Row(Modifier.fillMaxWidth()) {
                 Text(
-                    "Episode: $ep, Season: $se",
+                    "Episode: ${episode.episode}, Season: ${episode.season}",
                     style = RickAndMortyTheme.typography.bodySmall,
                     color = RickAndMortyTheme.colors.primary,
                     textAlign = TextAlign.Left,
@@ -39,9 +40,9 @@ internal fun EpisodeItem(ep: String,se:String) {
                         .padding(start = 16.dp, bottom = 16.dp, top = 8.dp)
                 )
                 Text(
-                    "December 2, 2013",
+                    episode.airDate,
                     style = RickAndMortyTheme.typography.bodyExtraSmall,
-                    color = RickAndMortyTheme.colors.grayLight,
+                    color = RickAndMortyTheme.colors.grayDark,
                     textAlign = TextAlign.Right,
                     maxLines = 1,
                     modifier = Modifier

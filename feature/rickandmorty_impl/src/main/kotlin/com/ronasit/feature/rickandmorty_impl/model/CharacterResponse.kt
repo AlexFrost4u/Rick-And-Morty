@@ -9,6 +9,6 @@ data class CharacterResponse(
     val results: List<Result>
 )
 
-fun CharacterResponse.toDomain():CharacterPager{
-    return CharacterPager(characters = results.map{item -> item.toDomain()}, countPage = info.pages)
+fun CharacterResponse.toDomain(): CharacterPager {
+    return CharacterPager(characters = results.map { item -> item.toDomain() }, countPage = info.pages)
 }

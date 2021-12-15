@@ -26,6 +26,7 @@ include(
     ":ui:home",
     ":ui:character:list",
     ":ui:location:list",
+    ":ui:location:detail",
     ":ui:episode:list"
 )
 

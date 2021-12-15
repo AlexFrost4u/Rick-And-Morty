@@ -6,6 +6,7 @@ import com.orhanobut.logger.Logger
 import com.ronasit.character.list.characterListModule
 import com.ronasit.feature.rickandmorty_impl.rickAndMortyModule
 import com.ronasit.location.list.locationListModule
+import com.ronasit.ui.location.detail.locationDetailModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
@@ -25,7 +26,7 @@ class RickAndMortyApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@RickAndMortyApplication)
-            modules(listOf(rickAndMortyModule,characterListModule,locationListModule))
+            modules(listOf(rickAndMortyModule, characterListModule, locationListModule, locationDetailModule))
         }
     }
 }

@@ -3,8 +3,8 @@ package com.ronasit.character.list.datasource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.orhanobut.logger.Logger
-import com.ronasit.feature.rickandmorty_api.usecase.GetCharactersUseCase
 import com.ronasit.feature.rickandmorty_api.model.Character
+import com.ronasit.feature.rickandmorty_api.usecase.GetCharactersUseCase
 
 class CharacterSource(private val getCharactersUseCase: GetCharactersUseCase, private val searchText: String) :
     PagingSource<Int, Character>() {
@@ -26,7 +26,7 @@ class CharacterSource(private val getCharactersUseCase: GetCharactersUseCase, pr
                     null
                 }
             )
-        } catch(e:Exception){
+        } catch (e: Exception) {
             Logger.e(e.message ?: "CharacterSource")
             LoadResult.Error(e)
         }

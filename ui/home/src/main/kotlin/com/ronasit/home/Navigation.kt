@@ -5,6 +5,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -20,6 +21,7 @@ import com.ronasit.ui.episode.detail.ui.EpisodeDetailScreen
 import com.ronasit.ui.location.detail.ui.LocationDetailScreen
 import kotlinx.coroutines.FlowPreview
 
+@ExperimentalMaterialApi
 @FlowPreview
 @ExperimentalFoundationApi
 @ExperimentalAnimationApi

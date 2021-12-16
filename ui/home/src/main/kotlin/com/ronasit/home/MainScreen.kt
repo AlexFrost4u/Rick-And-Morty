@@ -2,6 +2,7 @@ package com.ronasit.home
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -10,6 +11,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import kotlinx.coroutines.FlowPreview
 
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @FlowPreview
 @ExperimentalAnimationApi
@@ -27,6 +29,7 @@ fun MainContainer() {
     }
 }
 
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @FlowPreview
 @ExperimentalAnimationApi

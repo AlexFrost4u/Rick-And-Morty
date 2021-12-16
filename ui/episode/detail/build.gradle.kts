@@ -37,11 +37,8 @@ dependencies {
     implementation(Dependency.Orbit.viewModel)
     implementation(Dependency.Koin.android)
     implementation(Dependency.Koin.compose)
-    implementation(Dependency.AndroidX.paging)
     implementation(Dependency.Other.toolbar)
     implementation(Dependency.Other.coil)
     implementation(Dependency.Loggers.prettyLogger)
     implementation(Dependency.Accompanist.insets)
-    implementation(project(ModuleDependency.navigation))
-    implementation(Dependency.Accompanist.navigationAnimation)
 }

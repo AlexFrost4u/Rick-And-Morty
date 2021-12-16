@@ -35,6 +35,7 @@ dependencies {
     implementation(Dependency.Other.insetter)
     implementation(Dependency.Navigation.compose)
     implementation(project(ModuleDependency.UI.episode))
+    implementation(project(ModuleDependency.UI.episodeDetail))
     implementation(project(ModuleDependency.UI.character))
     implementation(project(ModuleDependency.UI.location))
     implementation(project(ModuleDependency.UI.locationDetail))

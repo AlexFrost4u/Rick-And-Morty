@@ -27,7 +27,8 @@ include(
     ":ui:character:list",
     ":ui:location:list",
     ":ui:location:detail",
-    ":ui:episode:list"
+    ":ui:episode:list",
+    ":ui:episode:detail"
 )
 
 // Features

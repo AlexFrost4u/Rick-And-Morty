@@ -1,9 +1,6 @@
 package com.ronasit.feature.rickandmorty_impl.network
 
-import com.ronasit.feature.rickandmorty_impl.model.CharacterResponse
-import com.ronasit.feature.rickandmorty_impl.model.LocationDetailResidentResponseItem
-import com.ronasit.feature.rickandmorty_impl.model.LocationDetailResponse
-import com.ronasit.feature.rickandmorty_impl.model.LocationResponse
+import com.ronasit.feature.rickandmorty_impl.model.*
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -21,10 +18,21 @@ interface RickAndMortyService {
         @Query("name") nameLocation: String
     ): LocationResponse
 
+    @GET("episode")
+    suspend fun getAllEpisodes(
+        @Query("page") pageNumber: Int,
+        @Query("name") nameLocation: String
+    ): EpisodeResponse
+
     @GET("location/{id}")
     suspend fun getLocationById(
         @Path("id") id: Int?
     ): LocationDetailResponse
+
+    @GET("episode/{id}")
+    suspend fun getEpisodeById(
+        @Path("id") id: Int?
+    ): EpisodeDetailResponse
 
     @GET("character/{id}")
     suspend fun getCharacterById(

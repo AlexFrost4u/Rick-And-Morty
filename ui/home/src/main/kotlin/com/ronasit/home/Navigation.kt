@@ -11,10 +11,11 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import com.ronasit.character.list.EpisodeListScreen
 import com.ronasit.character.list.ui.CharacterListScreen
+import com.ronasit.episode.list.ui.EpisodeListScreen
 import com.ronasit.location.list.ui.LocationListScreen
 import com.ronasit.navigation.NavigationItem
+import com.ronasit.ui.episode.detail.ui.EpisodeDetailScreen
 import com.ronasit.ui.location.detail.ui.LocationDetailScreen
 import kotlinx.coroutines.FlowPreview
 
@@ -40,7 +41,7 @@ internal fun Navigation(navController: NavHostController) {
         }
 
         composable(NavigationItem.Episode.route) {
-            EpisodeListScreen()
+            EpisodeListScreen(navController = navController)
         }
 
         composable(
@@ -48,6 +49,13 @@ internal fun Navigation(navController: NavHostController) {
             arguments = listOf(navArgument("id") { type = NavType.IntType })
         ) { backStackEntry ->
             LocationDetailScreen(navController, backStackEntry.arguments?.getInt("id"))
+        }
+
+        composable(
+            "episodeDetail/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.IntType })
+        ) { backStackEntry ->
+            EpisodeDetailScreen(navController, backStackEntry.arguments?.getInt("id"))
         }
     }
 }

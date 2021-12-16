@@ -11,12 +11,12 @@ android {
         targetSdk = AndroidConfig.targetSdk
     }
 
-    buildFeatures {
-        compose = true
-    }
-
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        compose = true
     }
 
     compileOptions {
@@ -31,14 +31,14 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
-    implementation(Dependency.Accompanist.insets)
-    implementation(Dependency.Other.insetter)
+    implementation(project(ModuleDependency.Feature.rickAndMorty_api))
     implementation(Dependency.Navigation.compose)
-    implementation(project(ModuleDependency.UI.episode))
-    implementation(project(ModuleDependency.UI.episodeDetail))
-    implementation(project(ModuleDependency.UI.character))
-    implementation(project(ModuleDependency.UI.location))
-    implementation(project(ModuleDependency.UI.locationDetail))
-    implementation(project(ModuleDependency.navigation))
-    implementation(Dependency.Accompanist.navigationAnimation)
+    implementation(Dependency.Accompanist.flowlayout)
+    implementation(Dependency.Orbit.viewModel)
+    implementation(Dependency.Koin.android)
+    implementation(Dependency.Koin.compose)
+    implementation(Dependency.Other.toolbar)
+    implementation(Dependency.Other.coil)
+    implementation(Dependency.Loggers.prettyLogger)
+    implementation(Dependency.Accompanist.insets)
 }

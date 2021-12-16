@@ -29,7 +29,7 @@ fun LocationDetailScreen(navController: NavController, id: String) {
 
     Scaffold(
         topBar = {
-            TopBar(onBackButtonClick = {navController.popBackStack()})
+            TopBar(onBackButtonClick = { navController.popBackStack() })
         }
     ) {
         Column(

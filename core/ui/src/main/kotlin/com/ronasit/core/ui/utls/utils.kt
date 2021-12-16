@@ -13,7 +13,7 @@ fun String.toFullEpisode(): String {
     return ("Episode: $episode, Season: $season")
 }
 
-fun String.shortenIf(length:Int): String {
+fun String.shortenIf(length: Int): String {
     return if (this.length >= length) {
         this.take(length - 3).plus("...")
     } else {

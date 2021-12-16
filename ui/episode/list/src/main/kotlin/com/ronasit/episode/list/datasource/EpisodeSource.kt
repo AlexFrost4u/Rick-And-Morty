@@ -6,7 +6,11 @@ import com.orhanobut.logger.Logger
 import com.ronasit.feature.rickandmorty_api.model.Episode
 import com.ronasit.feature.rickandmorty_api.usecase.GetEpisodesUseCase
 
-class EpisodeSource(private val getEpisodesUseCase: GetEpisodesUseCase, private val text: String) :
+class EpisodeSource(
+    private val getEpisodesUseCase: GetEpisodesUseCase,
+    private val text: String,
+    private val episode: String
+) :
     PagingSource<Int, Episode>() {
 
     override fun getRefreshKey(state: PagingState<Int, Episode>): Int? {
@@ -16,7 +20,7 @@ class EpisodeSource(private val getEpisodesUseCase: GetEpisodesUseCase, private 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Episode> {
         return try {
             val page = params.key ?: 1
-            val episodeResponse = getEpisodesUseCase(page, text)
+            val episodeResponse = getEpisodesUseCase(page, text, episode)
 
             LoadResult.Page(
                 data = episodeResponse.episodes,

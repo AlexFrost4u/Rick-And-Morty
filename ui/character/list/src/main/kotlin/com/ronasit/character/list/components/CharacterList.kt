@@ -19,7 +19,7 @@ import com.ronasit.feature.rickandmorty_api.model.Character
 
 @ExperimentalFoundationApi
 @Composable
-internal fun CharacterList(characters: LazyPagingItems<Character>,onItemClick:(id:String) -> Unit) {
+internal fun CharacterList(characters: LazyPagingItems<Character>, onItemClick: (id: String) -> Unit) {
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
         modifier = Modifier
@@ -34,7 +34,7 @@ internal fun CharacterList(characters: LazyPagingItems<Character>,onItemClick:(i
                     .defaultMinSize(minHeight = 256.dp, minWidth = 202.dp)
                     .fillMaxSize()
                     .padding(start = 16.dp, bottom = 16.dp)
-                    .clickable {onItemClick(characters[index]?.id.toString())}
+                    .clickable { onItemClick(characters[index]?.id.toString()) }
             ) {
                 CharacterItem(character = characters[index])
             }

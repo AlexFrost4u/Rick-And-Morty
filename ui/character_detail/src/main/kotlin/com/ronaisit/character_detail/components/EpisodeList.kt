@@ -16,7 +16,7 @@ import com.ronasit.core.ui.utls.toFullEpisode
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
-fun EpisodeList(episodes: List<Episode>?,onEpisodeCardClick:(id:String) -> Unit) {
+fun EpisodeList(episodes: List<Episode>?, onEpisodeCardClick: (id: String) -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -42,7 +42,7 @@ fun EpisodeList(episodes: List<Episode>?,onEpisodeCardClick:(id:String) -> Unit)
                         .height(96.dp)
                         .padding(start = 16.dp, bottom = 16.dp)
                         .background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))
-                        .clickable { onEpisodeCardClick(episodes[index].id.toString())}
+                        .clickable { onEpisodeCardClick(episodes[index].id.toString()) }
                 ) {
                     Column(Modifier.fillMaxSize()) {
                         Row(Modifier.fillMaxWidth()) {

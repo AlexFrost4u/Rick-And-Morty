@@ -27,5 +27,5 @@ internal fun ResidentsColumn(list: List<Character>?, onItemClick: (id: String) -
             modifier = Modifier.padding(top = 16.dp)
         )
     }
-    ResidentList(list, onCharacterCardClick ={onItemClick(it)})
+    ResidentList(list, onCharacterCardClick = { onItemClick(it) })
 }

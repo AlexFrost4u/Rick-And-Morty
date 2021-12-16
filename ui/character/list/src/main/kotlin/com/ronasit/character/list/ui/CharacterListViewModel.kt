@@ -26,7 +26,14 @@ internal class CharacterListViewModel(
         val debounce = 400L
 
         return Pager(PagingConfig(pageSize = Constants.pageSize)) {
-            CharacterSource(getCharactersUseCase, container.stateFlow.value.searchText)
+            CharacterSource(
+                getCharactersUseCase,
+                container.stateFlow.value.searchText,
+                container.stateFlow.value.status,
+                container.stateFlow.value.species,
+                container.stateFlow.value.type,
+                container.stateFlow.value.gender
+            )
         }.flow.debounce(debounce)
     }
 
@@ -35,4 +42,29 @@ internal class CharacterListViewModel(
             state.copy(searchText = searchText)
         }
     }
+
+    fun onChangeStatus(text: String) = intent {
+        reduce {
+            state.copy(status = text)
+        }
+    }
+
+    fun onChangeSpecies(text: String) = intent {
+        reduce {
+            state.copy(species = text)
+        }
+    }
+
+    fun onChangeType(text: String) = intent {
+        reduce {
+            state.copy(type = text)
+        }
+    }
+
+    fun onChangeGender(text: String) = intent {
+        reduce {
+            state.copy(gender = text)
+        }
+    }
+
 }

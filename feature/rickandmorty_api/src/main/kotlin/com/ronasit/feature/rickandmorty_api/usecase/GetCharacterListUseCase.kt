@@ -1,7 +1,7 @@
 package com.ronasit.feature.rickandmorty_api.usecase
 
-import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
 import com.ronasit.feature.rickandmorty_api.model.Character
+import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
 
 class GetCharacterListUseCase(
     private val characterRepository: CharacterRepository

@@ -1,7 +1,6 @@
 package com.ronaisit.character_detail.ui
 
 import androidx.lifecycle.ViewModel
-import com.orhanobut.logger.Logger
 import com.ronasit.feature.rickandmorty_api.usecase.GetCharacterDetailUseCase
 import com.ronasit.feature.rickandmorty_api.usecase.GetEpisodeListUseCase
 import com.ronasit.feature.rickandmorty_api.usecase.GetLocationUseCase

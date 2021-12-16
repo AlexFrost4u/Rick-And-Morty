@@ -1,9 +1,13 @@
 package com.ronasit.feature.rickandmorty_impl
 
-import com.ronasit.feature.rickandmorty_api.repository.*
+import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
+import com.ronasit.feature.rickandmorty_api.repository.EpisodeRepository
+import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
 import com.ronasit.feature.rickandmorty_api.usecase.*
 import com.ronasit.feature.rickandmorty_impl.network.getRickAndMortyService
-import com.ronasit.feature.rickandmorty_impl.repository.*
+import com.ronasit.feature.rickandmorty_impl.repository.CharacterRepositoryImpl
+import com.ronasit.feature.rickandmorty_impl.repository.EpisodeRepositoryImpl
+import com.ronasit.feature.rickandmorty_impl.repository.LocationRepositoryImpl
 import kotlinx.serialization.ExperimentalSerializationApi
 import org.koin.dsl.module
 

@@ -6,7 +6,7 @@ import com.ronasit.feature.rickandmorty_api.repository.LocationRepository
 class GetLocationsUseCase(
     private val locationRepository: LocationRepository
 ) {
-    suspend operator fun invoke(page: Int, name: String): LocationPager {
-        return locationRepository.getLocations(page, name)
+    suspend operator fun invoke(page: Int, name: String, type: String, dimension: String): LocationPager {
+        return locationRepository.getLocations(page, name, type, dimension)
     }
 }

@@ -32,7 +32,7 @@ internal fun ResidentList(list: List<Character>?, onCharacterCardClick: (id: Str
                     modifier = Modifier
                         .fillMaxSize(0.5f)
                         .padding(start = 16.dp, bottom = 16.dp)
-                        .clickable {onCharacterCardClick(list[index].id.toString()) }
+                        .clickable { onCharacterCardClick(list[index].id.toString()) }
                 ) {
                     ResidentItem(list[index])
                 }

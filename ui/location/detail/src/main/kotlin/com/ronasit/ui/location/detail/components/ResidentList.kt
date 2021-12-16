@@ -17,7 +17,7 @@ import com.ronasit.feature.rickandmorty_api.model.Character
 
 @ExperimentalFoundationApi
 @Composable
-internal fun ResidentList(list: List<Character>?,onCharacterCardClick:(id:String) -> Unit) {
+internal fun ResidentList(list: List<Character>?, onCharacterCardClick: (id: String) -> Unit) {
     FlowRow(
         modifier = Modifier
             .fillMaxWidth()

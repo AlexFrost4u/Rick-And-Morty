@@ -19,15 +19,15 @@ sealed class NavigationItem(val route: String, val icon: Int? = null, val active
         R.drawable.ic_play_filled_24
     )
 
-    object CharacterDetail:NavigationItem(
+    object CharacterDetail : NavigationItem(
         "character_detail"
     )
 
-    object LocationDetail:NavigationItem(
+    object LocationDetail : NavigationItem(
         "location_detail"
     )
 
-    object EpisodeDetail:NavigationItem(
+    object EpisodeDetail : NavigationItem(
         "episode_detail"
     )
 }

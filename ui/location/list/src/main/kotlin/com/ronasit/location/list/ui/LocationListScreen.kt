@@ -8,15 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.location.list.components.*
-import com.ronasit.location.list.components.FilterButton
-import com.ronasit.location.list.components.ListLocationItem
-import com.ronasit.location.list.components.ListToolBar
-import com.ronasit.location.list.components.SearchBar
 import com.ronasit.navigation.NavigationItem
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
@@ -39,10 +36,14 @@ fun LocationListScreen(
     )
     BottomSheetScaffold(
         sheetContent = {
-            SheetContent()
+            SheetContent(
+                state.type,
+                state.dimension,
+                onUpdateType = { viewModel.updateType(it) },
+                onUpdateDimension = { viewModel.updateDimension(it) })
         },
         sheetShape = RoundedCornerShape(16.dp),
-        sheetBackgroundColor = RickAndMortyTheme.colors.blackBG,
+        sheetBackgroundColor = Color.Transparent,
         scaffoldState = bottomSheetScaffoldState
     ) {
         ListToolBar(body = {
@@ -55,7 +56,7 @@ fun LocationListScreen(
                             .height(52.dp)
                     ) {
                         SearchBar(text = state.searchText, onTextChange = { viewModel.updateSearchText(it) })
-                        FilterButton{
+                        FilterButton(state.type, state.dimension) {
                             coroutineScope.launch {
                                 bottomSheetScaffoldState.bottomSheetState.expand()
                             }

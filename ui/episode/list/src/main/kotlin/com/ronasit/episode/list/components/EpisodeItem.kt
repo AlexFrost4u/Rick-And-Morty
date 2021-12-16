@@ -14,14 +14,14 @@ import com.ronasit.core.ui.utls.shortenIf
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
-internal fun EpisodeItem(episode: Episode, onEpisodeCardClick:(id:String) -> Unit) {
+internal fun EpisodeItem(episode: Episode, onEpisodeCardClick: (id: String) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(96.dp)
             .padding(start = 16.dp, bottom = 16.dp, end = 16.dp)
             .background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))
-            .clickable { onEpisodeCardClick(episode.id.toString())}
+            .clickable { onEpisodeCardClick(episode.id.toString()) }
     ) {
         Column(Modifier.fillMaxSize()) {
             Row(Modifier.fillMaxWidth()) {

@@ -19,7 +19,7 @@ import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.location.list.R
 
 @Composable
-internal fun Location(location: Location, onLocationClick:(id:String) -> Unit) {
+internal fun Location(location: Location, onLocationClick: (id: String) -> Unit) {
     val iconMap = mapOf(
         "Planet" to R.drawable.ic_planet_24,
         "Cluster" to R.drawable.ic_cluster_24,

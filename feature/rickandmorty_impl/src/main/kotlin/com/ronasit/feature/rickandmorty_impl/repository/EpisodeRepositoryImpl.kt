@@ -9,8 +9,8 @@ import com.ronasit.feature.rickandmorty_impl.model.toDomainDetail
 import com.ronasit.feature.rickandmorty_impl.network.RickAndMortyService
 
 class EpisodeRepositoryImpl(private val apiService: RickAndMortyService) : EpisodeRepository {
-    override suspend fun getEpisodes(page: Int, name: String): EpisodePager {
-        return apiService.getAllEpisodes(page, name).toDomain()
+    override suspend fun getEpisodes(page: Int, name: String, episode: String): EpisodePager {
+        return apiService.getAllEpisodes(page, name, episode).toDomain()
     }
 
     override suspend fun getEpisode(id: String?): EpisodeDetail {

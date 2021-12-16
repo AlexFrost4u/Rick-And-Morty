@@ -13,7 +13,7 @@ import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @ExperimentalFoundationApi
 @Composable
-internal fun EpisodeList(episodes: LazyPagingItems<Episode>,onItemClick:(id:String) -> Unit) {
+internal fun EpisodeList(episodes: LazyPagingItems<Episode>, onItemClick: (id: String) -> Unit) {
     LazyColumn(
         modifier = Modifier
             .navigationBarsPadding()
@@ -26,7 +26,7 @@ internal fun EpisodeList(episodes: LazyPagingItems<Episode>,onItemClick:(id:Stri
                 StickyHeaderSeason(number = initial)
             }
             items(contactsForInitial.size) { item ->
-                EpisodeItem(contactsForInitial[item], onEpisodeCardClick =  { onItemClick(it)})
+                EpisodeItem(contactsForInitial[item], onEpisodeCardClick = { onItemClick(it) })
             }
         }
     }

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.ronasit.core.ui.theme.RickAndMortyTheme
@@ -38,7 +37,7 @@ fun EpisodeListScreen(
         ) {
             Column {
                 SearchBar(text = state.searchText, onTextChange = { viewModel.updateSearchText(it) })
-                Filter()
+                Filter(state.episode) { viewModel.updateEpisode(it) }
                 EpisodeList(
                     episodes,
                     onItemClick = { navController.navigate(NavigationItem.EpisodeDetail.route.plus("/$it")) })

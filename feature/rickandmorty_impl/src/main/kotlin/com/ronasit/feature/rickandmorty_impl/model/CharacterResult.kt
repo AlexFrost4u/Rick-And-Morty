@@ -1,6 +1,5 @@
 package com.ronasit.feature.rickandmorty_impl.model
 
-import com.orhanobut.logger.Logger
 import com.ronasit.feature.rickandmorty_api.model.Character
 import com.ronasit.feature.rickandmorty_api.model.CharacterDetail
 import kotlinx.serialization.SerialName

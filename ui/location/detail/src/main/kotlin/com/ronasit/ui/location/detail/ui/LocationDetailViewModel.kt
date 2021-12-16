@@ -2,7 +2,6 @@ package com.ronasit.ui.location.detail.ui
 
 import androidx.lifecycle.ViewModel
 import com.ronasit.feature.rickandmorty_api.usecase.GetCharacterListUseCase
-import com.ronasit.feature.rickandmorty_api.usecase.GetEpisodeDetailUseCase
 import com.ronasit.feature.rickandmorty_api.usecase.GetLocationUseCase
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent

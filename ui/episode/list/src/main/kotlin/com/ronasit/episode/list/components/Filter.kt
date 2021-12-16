@@ -7,16 +7,15 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.ronasit.episode.list.Filter.season
 
 @Composable
-internal fun Filter() {
-    val season = listOf("All", "Season 1", "Season 2", "Season 3", "Season 4", "Season 5")
-
+internal fun Filter(episode: String, onEpisodeChange: (String) -> Unit) {
     Row(modifier = Modifier.padding(top = 16.dp)) {
         LazyRow() {
             items(season.size) { index ->
                 if (index == 0) Spacer(Modifier.padding(start = 16.dp))
-                FilterItem(season[index])
+                FilterItem(season[index], onEpisodeChange, episode)
             }
         }
     }

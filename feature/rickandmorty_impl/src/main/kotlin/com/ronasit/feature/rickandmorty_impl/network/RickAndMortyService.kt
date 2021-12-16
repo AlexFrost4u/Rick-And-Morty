@@ -9,19 +9,27 @@ interface RickAndMortyService {
     @GET("character")
     suspend fun getAllCharacters(
         @Query("page") pageNumber: Int,
-        @Query("name") nameCharacter: String
-    ): CharacterResponse
+        @Query("name") nameCharacter: String,
+        @Query("status") status: String,
+        @Query("species") species: String,
+        @Query("type") type: String,
+        @Query("gender") gender: String,
+
+        ): CharacterResponse
 
     @GET("location")
     suspend fun getAllLocations(
         @Query("page") pageNumber: Int,
-        @Query("name") nameLocation: String
+        @Query("name") nameLocation: String,
+        @Query("type") type: String,
+        @Query("dimension") dimension: String
     ): LocationResponse
 
     @GET("episode")
     suspend fun getAllEpisodes(
         @Query("page") pageNumber: Int,
-        @Query("name") nameLocation: String
+        @Query("name") nameLocation: String,
+        @Query("episode") episode: String
     ): EpisodeResponse
 
 

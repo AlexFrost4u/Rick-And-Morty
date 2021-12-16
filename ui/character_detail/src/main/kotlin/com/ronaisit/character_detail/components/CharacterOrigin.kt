@@ -20,7 +20,7 @@ import com.ronasit.core.ui.utls.shortenIf
 import com.ronasit.feature.rickandmorty_api.model.LocationDetail
 
 @Composable
-fun CharacterOrigin(origin: LocationDetail?,onOriginCardClick:(id:String) -> Unit) {
+fun CharacterOrigin(origin: LocationDetail?, onOriginCardClick: (id: String) -> Unit) {
     val iconMap = mapOf(
         "Planet" to com.ronasit.character_detail.R.drawable.ic_planet_24,
         "Cluster" to com.ronasit.character_detail.R.drawable.ic_cluster_24,

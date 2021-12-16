@@ -25,7 +25,7 @@ internal fun CharacterItem(character: Character?) {
     if (character != null) {
         Logger.e("ID Value : ${character.id}")
     }
-    Column{
+    Column {
         Image(
             painter = rememberImagePainter(character!!.imageUrl),
             contentDescription = null,

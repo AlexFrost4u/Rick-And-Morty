@@ -11,13 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.ui.location.detail.R
 
 @Composable
-internal fun TopBar(onBackButtonClick:() -> Unit) {
+internal fun TopBar(onBackButtonClick: () -> Unit) {
     Box(
         modifier = Modifier
             .height(92.dp)

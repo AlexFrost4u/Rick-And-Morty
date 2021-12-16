@@ -25,13 +25,19 @@ class EpisodeListViewModel(
         val debounce = 400L
 
         return Pager(PagingConfig(pageSize = 20)) {
-            EpisodeSource(getEpisodesUseCase, container.stateFlow.value.searchText)
+            EpisodeSource(getEpisodesUseCase, container.stateFlow.value.searchText, container.stateFlow.value.episode)
         }.flow.debounce(debounce)
     }
 
     fun updateSearchText(text: String) = intent {
         reduce {
             state.copy(searchText = text)
+        }
+    }
+
+    fun updateEpisode(text: String) = intent {
+        reduce {
+            state.copy(episode = text)
         }
     }
 }

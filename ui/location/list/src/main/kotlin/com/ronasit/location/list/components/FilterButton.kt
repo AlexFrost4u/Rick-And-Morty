@@ -19,19 +19,19 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.location.list.R
 
 @Composable
-internal fun FilterButton(function: () -> Unit) {
+internal fun FilterButton(type: String, dimension: String, function: () -> Unit) {
     Box(modifier = Modifier.fillMaxWidth()) {
         Image(
             painterResource(id = R.drawable.ic_sliders_24),
             contentDescription = null,
             contentScale = ContentScale.None,
-            colorFilter = ColorFilter.tint(color = RickAndMortyTheme.colors.grayDark),
+            colorFilter = ColorFilter.tint(color = if (type.isNotEmpty() || dimension.isNotEmpty()) RickAndMortyTheme.colors.white else RickAndMortyTheme.colors.grayDark),
             modifier = Modifier
                 .align(Alignment.CenterEnd)
                 .clip(RoundedCornerShape(16.dp))
                 .size(56.dp)
-                .background(RickAndMortyTheme.colors.blackCard)
-                .clickable (onClick = function)
+                .background(if (type.isNotEmpty() || dimension.isNotEmpty()) RickAndMortyTheme.colors.primary else RickAndMortyTheme.colors.blackCard)
+                .clickable(onClick = function)
         )
     }
 }

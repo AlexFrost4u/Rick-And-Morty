@@ -26,13 +26,30 @@ class LocationListViewModel(
         val debounce = 400L
 
         return Pager(PagingConfig(pageSize = 20)) {
-            LocationSource(getLocationsUseCase, container.stateFlow.value.searchText)
+            LocationSource(
+                getLocationsUseCase,
+                container.stateFlow.value.searchText,
+                container.stateFlow.value.type,
+                container.stateFlow.value.dimension
+            )
         }.flow.debounce(debounce)
     }
 
     fun updateSearchText(text: String) = intent {
         reduce {
             state.copy(searchText = text)
+        }
+    }
+
+    fun updateType(text: String) = intent {
+        reduce {
+            state.copy(type = text)
+        }
+    }
+
+    fun updateDimension(text: String) = intent {
+        reduce {
+            state.copy(dimension = text)
         }
     }
 }

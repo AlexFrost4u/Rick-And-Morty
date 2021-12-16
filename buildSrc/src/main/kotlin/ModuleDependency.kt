@@ -8,10 +8,10 @@ object ModuleDependency {
 
         const val home = "$directory:home"
         const val character = "$directory:character:list"
+        const val characterDetail = "$directory:character_detail"
         const val location = "$directory:location:list"
         const val locationDetail = "$directory:location:detail"
         const val episode = "$directory:episode:list"
-        const val character_detail = "$directory:character_detail"
         const val episodeDetail = "$directory:episode:detail"
     }
 

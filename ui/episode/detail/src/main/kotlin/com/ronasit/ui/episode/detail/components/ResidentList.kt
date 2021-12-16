@@ -1,6 +1,7 @@
 package com.ronasit.ui.episode.detail.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -16,7 +17,7 @@ import com.ronasit.feature.rickandmorty_api.model.Character
 
 @ExperimentalFoundationApi
 @Composable
-internal fun ResidentList(list: List<Character>?) {
+internal fun ResidentList(list: List<Character>?, onCharacterCardClick: (id: String) -> Unit) {
     FlowRow(
         modifier = Modifier
             .fillMaxWidth()
@@ -31,6 +32,7 @@ internal fun ResidentList(list: List<Character>?) {
                     modifier = Modifier
                         .fillMaxSize(0.5f)
                         .padding(start = 16.dp, bottom = 16.dp)
+                        .clickable {onCharacterCardClick(list[index].id.toString()) }
                 ) {
                     ResidentItem(list[index])
                 }

@@ -13,7 +13,7 @@ import com.google.accompanist.insets.navigationBarsPadding
 import com.ronasit.feature.rickandmorty_api.model.Location
 
 @Composable
-internal fun ListLocationItem(locations: LazyPagingItems<Location>, navController: NavController) {
+internal fun ListLocationItem(locations: LazyPagingItems<Location>,onItemClick:(id:String) -> Unit) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
@@ -22,7 +22,7 @@ internal fun ListLocationItem(locations: LazyPagingItems<Location>, navControlle
     ) {
         items(locations) { item ->
             if (item != null) {
-                Location(item, navController = navController)
+                Location(item, onLocationClick = {onItemClick(it)})
             }
         }
     }

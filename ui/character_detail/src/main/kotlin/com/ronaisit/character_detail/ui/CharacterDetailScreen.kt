@@ -46,13 +46,7 @@ fun CharacterDetailScreen(
                     modifier = Modifier
                         .statusBarsPadding()
                         .padding(top = 22.dp, start = 33.dp, bottom = 14.dp)
-                        .clickable {
-                            (navController.navigate(NavigationItem.Character.route) {
-                                popUpTo(NavigationItem.Character.route)
-                                launchSingleTop = true
-                                restoreState = true
-                            })
-                        }
+                        .clickable { (navController.popBackStack()) }
                 )
             }
         }
@@ -63,11 +57,30 @@ fun CharacterDetailScreen(
                 .background(RickAndMortyTheme.colors.blackBG)
                 .verticalScroll(scrolls)
         ) {
-            // Bad practice to pass character object to 2 composable.Unnecessary recomposition
+            // Bad practice to pass character object to 2 composables.Unnecessary recomposition
             CharacterCard(character = state.character)
             CharacterInfo(character = state.character)
-            CharacterOrigin(origin = state.origin)
-            EpisodeList(episodes = state.episodeList)
+            CharacterOrigin(
+                origin = state.origin,
+                onOriginCardClick = {
+                    navController.navigate(NavigationItem.LocationDetail.route.plus("/$it")) {
+                        popUpTo(NavigationItem.LocationDetail.route) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                }
+            )
+            EpisodeList(episodes = state.episodeList, onEpisodeCardClick = {
+                navController.navigate(NavigationItem.EpisodeDetail.route.plus("/$it")) {
+                    popUpTo(NavigationItem.EpisodeDetail.route) {
+                        saveState = true
+                    }
+                    launchSingleTop = true
+                    restoreState = true
+                }
+            })
         }
     }
 }

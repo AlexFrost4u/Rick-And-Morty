@@ -55,6 +55,7 @@ dependencies {
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
     implementation(project(ModuleDependency.Feature.rickAndMorty_impl))
     implementation(project(ModuleDependency.UI.character))
+    implementation(project(ModuleDependency.UI.characterDetail))
     implementation(project(ModuleDependency.UI.location))
     implementation(project(ModuleDependency.UI.episode))
     implementation(project(ModuleDependency.UI.locationDetail))

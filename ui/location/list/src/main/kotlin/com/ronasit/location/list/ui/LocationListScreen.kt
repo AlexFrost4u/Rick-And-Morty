@@ -13,12 +13,15 @@ import com.ronasit.location.list.components.FilterButton
 import com.ronasit.location.list.components.ListLocationItem
 import com.ronasit.location.list.components.ListToolBar
 import com.ronasit.location.list.components.SearchBar
+import com.ronasit.navigation.NavigationItem
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.compose.viewModel
 
 @FlowPreview
 @Composable
-fun LocationListScreen(navController: NavController) {
+fun LocationListScreen(
+    navController: NavController
+) {
     val viewModel: LocationListViewModel by viewModel()
     val state = viewModel.container.stateFlow.collectAsState().value
     val locations = viewModel.getLocationPagination().collectAsLazyPagingItems()
@@ -36,7 +39,10 @@ fun LocationListScreen(navController: NavController) {
                     FilterButton()
                 }
                 Box(modifier = Modifier.fillMaxSize()) {
-                    ListLocationItem(locations, navController = navController)
+                    ListLocationItem(
+                        locations,
+                        onItemClick = {navController.navigate(NavigationItem.LocationDetail.route.plus("/$it"))}
+                    )
                 }
             }
         }

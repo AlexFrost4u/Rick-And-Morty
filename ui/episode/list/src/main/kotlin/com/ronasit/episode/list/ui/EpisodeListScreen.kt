@@ -16,14 +16,16 @@ import com.ronasit.episode.list.components.EpisodeList
 import com.ronasit.episode.list.components.Filter
 import com.ronasit.episode.list.components.SearchBar
 import com.ronasit.episode.list.components.ToolBar
+import com.ronasit.navigation.NavigationItem
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.compose.viewModel
-
 
 @FlowPreview
 @ExperimentalFoundationApi
 @Composable
-fun EpisodeListScreen(navController: NavController) {
+fun EpisodeListScreen(
+    navController: NavController
+) {
     val viewModel: EpisodeListViewModel by viewModel()
     val state = viewModel.container.stateFlow.collectAsState().value
     val episodes = viewModel.getEpisodePagination().collectAsLazyPagingItems()
@@ -37,7 +39,9 @@ fun EpisodeListScreen(navController: NavController) {
             Column {
                 SearchBar(text = state.searchText, onTextChange = { viewModel.updateSearchText(it) })
                 Filter()
-                EpisodeList(navController, episodes)
+                EpisodeList(
+                    episodes,
+                    onItemClick = { navController.navigate(NavigationItem.EpisodeDetail.route.plus("/$it")) })
             }
         }
     })

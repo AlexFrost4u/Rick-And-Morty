@@ -24,18 +24,31 @@ interface RickAndMortyService {
         @Query("name") nameLocation: String
     ): EpisodeResponse
 
+
     @GET("location/{id}")
-    suspend fun getLocationById(
-        @Path("id") id: Int?
-    ): LocationDetailResponse
+    suspend fun getLocation(
+        @Path("id") id: String?
+    ): LocationResult
 
     @GET("episode/{id}")
-    suspend fun getEpisodeById(
-        @Path("id") id: Int?
-    ): EpisodeDetailResponse
+    suspend fun getEpisode(
+        @Path("id") id: String?
+    ): EpisodeResult
 
     @GET("character/{id}")
-    suspend fun getCharacterById(
+    suspend fun getCharacter(
         @Path("id") id: String
-    ): List<LocationDetailResidentResponseItem>
+    ): CharacterResult
+
+
+    @GET("character/{id}")
+    suspend fun getCharacterList(
+        @Path("id") id: String
+    ): List<CharacterResult>
+
+    @GET("episode/{id}")
+    suspend fun getEpisodeList(
+        @Path("id") id: String?
+    ): List<EpisodeResult>
+
 }

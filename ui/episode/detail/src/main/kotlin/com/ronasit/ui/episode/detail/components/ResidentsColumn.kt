@@ -14,7 +14,7 @@ import com.ronasit.feature.rickandmorty_api.model.Character
 
 @ExperimentalFoundationApi
 @Composable
-internal fun ResidentsColumn(list: List<Character>?) {
+internal fun ResidentsColumn(list: List<Character>?,onItemClick:(id:String) -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -27,5 +27,5 @@ internal fun ResidentsColumn(list: List<Character>?) {
             modifier = Modifier.padding(top = 16.dp)
         )
     }
-    ResidentList(list)
+    ResidentList(list, onCharacterCardClick = {onItemClick(it)})
 }

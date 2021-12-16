@@ -6,7 +6,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import com.google.accompanist.insets.navigationBarsPadding
@@ -14,7 +13,7 @@ import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @ExperimentalFoundationApi
 @Composable
-internal fun EpisodeList(navController: NavController, episodes: LazyPagingItems<Episode>) {
+internal fun EpisodeList(episodes: LazyPagingItems<Episode>,onItemClick:(id:String) -> Unit) {
     LazyColumn(
         modifier = Modifier
             .navigationBarsPadding()
@@ -27,7 +26,7 @@ internal fun EpisodeList(navController: NavController, episodes: LazyPagingItems
                 StickyHeaderSeason(number = initial)
             }
             items(contactsForInitial.size) { item ->
-                EpisodeItem(navController, contactsForInitial[item])
+                EpisodeItem(contactsForInitial[item], onEpisodeCardClick =  { onItemClick(it)})
             }
         }
     }

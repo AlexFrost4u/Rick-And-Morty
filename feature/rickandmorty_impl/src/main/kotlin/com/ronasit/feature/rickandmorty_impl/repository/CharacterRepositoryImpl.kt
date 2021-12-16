@@ -1,6 +1,6 @@
 package com.ronasit.feature.rickandmorty_impl.repository
 
-import com.orhanobut.logger.Logger
+import com.ronasit.feature.rickandmorty_api.model.Character
 import com.ronasit.feature.rickandmorty_api.model.CharacterDetail
 import com.ronasit.feature.rickandmorty_api.model.CharacterPager
 import com.ronasit.feature.rickandmorty_api.repository.CharacterRepository
@@ -14,7 +14,12 @@ class CharacterRepositoryImpl(private val apiService: RickAndMortyService) : Cha
     }
 
     override suspend fun getCharacter(id: String): CharacterDetail {
-        Logger.e("Get Character")
         return apiService.getCharacter(id).toDomainDetail()
+    }
+
+    override suspend fun getCharacterList(id: String): List<Character> {
+        return apiService.getCharacterList(id).map { result ->
+            result.toDomain()
+        }
     }
 }

@@ -40,7 +40,7 @@ fun CharacterResult.toDomainDetail(): CharacterDetail {
         paths.last()
     }
     var originTemp = ""
-    if(origin.name != "unknown") {
+    if (origin.name != "unknown") {
         originTemp = originTemp.plus(origin.url.replace("https://rickandmortyapi.com/api/location/", ""))
     }
     return CharacterDetail(

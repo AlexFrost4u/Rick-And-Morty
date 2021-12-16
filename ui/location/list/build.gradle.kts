@@ -31,6 +31,7 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
+    implementation(project(ModuleDependency.navigation))
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
     implementation(Dependency.Orbit.viewModel)
     implementation(Dependency.AndroidX.paging)

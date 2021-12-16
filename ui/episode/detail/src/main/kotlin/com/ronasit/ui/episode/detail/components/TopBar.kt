@@ -17,7 +17,7 @@ import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.ui.episode.detail.R
 
 @Composable
-internal fun TopBar(navController: NavController) {
+internal fun TopBar(onBackButtonClick:() -> Unit) {
     Box(
         modifier = Modifier
             .height(92.dp)
@@ -31,7 +31,7 @@ internal fun TopBar(navController: NavController) {
             modifier = Modifier
                 .statusBarsPadding()
                 .padding(top = 22.dp, start = 33.dp, bottom = 14.dp)
-                .clickable { navController.popBackStack() }
+                .clickable { onBackButtonClick() }
         )
     }
 }

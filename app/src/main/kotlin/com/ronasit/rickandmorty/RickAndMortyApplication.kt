@@ -3,6 +3,7 @@ package com.ronasit.rickandmorty
 import android.app.Application
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
+import com.ronaisit.character_detail.characterDetailModule
 import com.ronasit.character.list.characterListModule
 import com.ronasit.episode.list.episodeListModule
 import com.ronasit.feature.rickandmorty_impl.rickAndMortyModule
@@ -32,6 +33,7 @@ class RickAndMortyApplication : Application() {
                 listOf(
                     rickAndMortyModule,
                     characterListModule,
+                    characterDetailModule,
                     episodeListModule,
                     locationListModule,
                     locationDetailModule,

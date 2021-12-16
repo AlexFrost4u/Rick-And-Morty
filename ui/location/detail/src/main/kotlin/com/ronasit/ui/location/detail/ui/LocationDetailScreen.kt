@@ -12,6 +12,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
+import com.ronasit.navigation.NavigationItem
 import com.ronasit.ui.location.detail.components.ImageNameColumn
 import com.ronasit.ui.location.detail.components.InfoColumn
 import com.ronasit.ui.location.detail.components.ResidentsColumn
@@ -21,14 +22,14 @@ import org.koin.core.parameter.parametersOf
 
 @ExperimentalFoundationApi
 @Composable
-fun LocationDetailScreen(navController: NavController, id: Int?) {
+fun LocationDetailScreen(navController: NavController, id: String) {
     val viewModel: LocationDetailViewModel by viewModel { parametersOf(id) }
     val state = viewModel.container.stateFlow.collectAsState()
     val scroll = rememberScrollState()
 
     Scaffold(
         topBar = {
-            TopBar(navController = navController)
+            TopBar(onBackButtonClick = {navController.popBackStack()})
         }
     ) {
         Column(
@@ -41,7 +42,15 @@ fun LocationDetailScreen(navController: NavController, id: Int?) {
             InfoColumn(state.value.locationDetail?.type, state.value.locationDetail?.dimension)
 
             if (state.value.residentList?.isNotEmpty() == true)
-                ResidentsColumn(state.value.residentList)
+                ResidentsColumn(state.value.residentList, onItemClick = {
+                    navController.navigate(NavigationItem.CharacterDetail.route.plus("/$it")) {
+                        popUpTo(NavigationItem.CharacterDetail.route) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                })
         }
     }
 }

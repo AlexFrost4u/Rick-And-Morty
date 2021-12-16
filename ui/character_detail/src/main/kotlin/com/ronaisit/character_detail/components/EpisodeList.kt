@@ -1,6 +1,7 @@
 package com.ronaisit.character_detail.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -15,7 +16,7 @@ import com.ronasit.core.ui.utls.toFullEpisode
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
-fun EpisodeList(episodes: List<Episode>?) {
+fun EpisodeList(episodes: List<Episode>?,onEpisodeCardClick:(id:String) -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
@@ -41,6 +42,7 @@ fun EpisodeList(episodes: List<Episode>?) {
                         .height(96.dp)
                         .padding(start = 16.dp, bottom = 16.dp)
                         .background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))
+                        .clickable { onEpisodeCardClick(episodes[index].id.toString())}
                 ) {
                     Column(Modifier.fillMaxSize()) {
                         Row(Modifier.fillMaxWidth()) {

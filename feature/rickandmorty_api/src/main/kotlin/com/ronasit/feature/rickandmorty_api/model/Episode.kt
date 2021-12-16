@@ -8,6 +8,3 @@ data class Episode(
     val episode: String,
 )
 
-
-    val episode: String
-)

@@ -37,6 +37,7 @@ dependencies {
     implementation(project(ModuleDependency.UI.episode))
     implementation(project(ModuleDependency.UI.episodeDetail))
     implementation(project(ModuleDependency.UI.character))
+    implementation(project(ModuleDependency.UI.characterDetail))
     implementation(project(ModuleDependency.UI.location))
     implementation(project(ModuleDependency.UI.locationDetail))
     implementation(project(ModuleDependency.navigation))

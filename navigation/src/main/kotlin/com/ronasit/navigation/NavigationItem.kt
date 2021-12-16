@@ -1,9 +1,5 @@
 package com.ronasit.navigation
 
-const val LIST_GRAPH_ROUTE = "list"
-const val DETAIL_GRAPH_ROUTE = "detail"
-const val ROOT_GRAPH_ROUTE = "root"
-
 sealed class NavigationItem(val route: String, val icon: Int? = null, val activeIcon: Int? = null) {
     object Character : NavigationItem(
         "character_list",
@@ -25,5 +21,13 @@ sealed class NavigationItem(val route: String, val icon: Int? = null, val active
 
     object CharacterDetail:NavigationItem(
         "character_detail"
+    )
+
+    object LocationDetail:NavigationItem(
+        "location_detail"
+    )
+
+    object EpisodeDetail:NavigationItem(
+        "episode_detail"
     )
 }

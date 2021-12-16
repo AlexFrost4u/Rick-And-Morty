@@ -32,6 +32,7 @@ android {
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
     implementation(project(ModuleDependency.Feature.rickAndMorty_api))
+    implementation(project(ModuleDependency.navigation))
     implementation(Dependency.Navigation.compose)
     implementation(Dependency.Accompanist.flowlayout)
     implementation(Dependency.Orbit.viewModel)

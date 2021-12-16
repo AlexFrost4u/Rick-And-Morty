@@ -1,17 +1,18 @@
 package com.ronasit.ui.location.detail.ui
 
 import androidx.lifecycle.ViewModel
-import com.ronasit.feature.rickandmorty_api.repository.LocationDetailRepository
-import com.ronasit.feature.rickandmorty_api.repository.LocationDetailResidentRepository
+import com.ronasit.feature.rickandmorty_api.usecase.GetCharacterListUseCase
+import com.ronasit.feature.rickandmorty_api.usecase.GetEpisodeDetailUseCase
+import com.ronasit.feature.rickandmorty_api.usecase.GetLocationUseCase
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class LocationDetailViewModel(
-    private val locationDetailRepository: LocationDetailRepository,
-    private val locationDetailResidentRepository: LocationDetailResidentRepository,
-    private val id: Int
+    private val getLocationDetailUseCase: GetLocationUseCase,
+    private val getCharacterListUseCase: GetCharacterListUseCase,
+    private val id: String
 ) : ViewModel(), ContainerHost<LocationDetailState, LocationDetailSideEffect> {
     override val container = container<LocationDetailState, LocationDetailSideEffect>(LocationDetailState()) { state ->
         if (state.locationDetail == null) {
@@ -19,13 +20,13 @@ class LocationDetailViewModel(
         }
     }
 
-    private fun getLocationDetail(id: Int?) = intent {
-        val response = locationDetailRepository.getLocationById(id)
+    private fun getLocationDetail(id: String) = intent {
+        val response = getLocationDetailUseCase(id)
         reduce {
             state.copy(locationDetail = response)
         }
         if (response.residents.isNotEmpty()) {
-            val responseResident = locationDetailResidentRepository.getResidentsById(response.residents)
+            val responseResident = getCharacterListUseCase(response.residents)
             reduce {
                 state.copy(residentList = responseResident)
             }

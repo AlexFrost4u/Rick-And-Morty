@@ -24,7 +24,6 @@ class CharacterDetailViewModel(
         }
 
     private fun getCharacterDetail(id: String) = intent {
-        Logger.e("Call $id ")
 
         val character = getCharacterDetailUseCase(id)
 

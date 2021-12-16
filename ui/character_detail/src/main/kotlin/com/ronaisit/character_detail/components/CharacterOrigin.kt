@@ -4,6 +4,7 @@ package com.ronaisit.character_detail.components
 import android.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -16,10 +17,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.core.ui.utls.shortenIf
-import com.ronasit.feature.rickandmorty_api.model.Location
+import com.ronasit.feature.rickandmorty_api.model.LocationDetail
 
 @Composable
-fun CharacterOrigin(origin: Location?) {
+fun CharacterOrigin(origin: LocationDetail?,onOriginCardClick:(id:String) -> Unit) {
     val iconMap = mapOf(
         "Planet" to com.ronasit.character_detail.R.drawable.ic_planet_24,
         "Cluster" to com.ronasit.character_detail.R.drawable.ic_cluster_24,
@@ -34,6 +35,11 @@ fun CharacterOrigin(origin: Location?) {
         Modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp)
+            .clickable {
+                if (origin != null) {
+                    onOriginCardClick(origin.id.toString())
+                }
+            }
     ) {
         Text(
             "Origin",

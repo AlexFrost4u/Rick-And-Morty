@@ -9,19 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
-internal fun EpisodeItem(navController: NavController, episode: Episode) {
+internal fun EpisodeItem(episode: Episode, onEpisodeCardClick:(id:String) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(96.dp)
             .padding(start = 16.dp, bottom = 16.dp, end = 16.dp)
             .background(RickAndMortyTheme.colors.blackCard, RoundedCornerShape(16.dp))
-            .clickable { navController.navigate("episodeDetail/${episode.id}") }
+            .clickable { onEpisodeCardClick(episode.id.toString())}
     ) {
         Column(Modifier.fillMaxSize()) {
             Row(Modifier.fillMaxWidth()) {

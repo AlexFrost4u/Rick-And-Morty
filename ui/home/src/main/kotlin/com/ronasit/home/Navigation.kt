@@ -11,11 +11,11 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import com.ronasit.character.list.ui.CharacterListScreen
 import com.ronasit.character.list.EpisodeListScreen
+import com.ronasit.character.list.ui.CharacterListScreen
 import com.ronasit.location.list.ui.LocationListScreen
 import com.ronasit.navigation.NavigationItem
-import com.ronaisit.character_detail.ui.CharacterDetailScreen
+import com.ronasit.ui.location.detail.ui.LocationDetailScreen
 import kotlinx.coroutines.FlowPreview
 
 @FlowPreview
@@ -32,11 +32,11 @@ internal fun Navigation(navController: NavHostController) {
         popExitTransition = { fadeOut(animationSpec = tween(0)) },
     ) {
         composable(NavigationItem.Character.route) {
-            CharacterListScreen(navController = navController)
+            CharacterListScreen()
         }
 
         composable(NavigationItem.Location.route) {
-            LocationListScreen()
+            LocationListScreen(navController = navController)
         }
 
         composable(NavigationItem.Episode.route) {
@@ -44,11 +44,10 @@ internal fun Navigation(navController: NavHostController) {
         }
 
         composable(
-            NavigationItem.CharacterDetail.route.plus("/{id}"),
-            arguments = listOf(navArgument("id") { type = NavType.StringType })
+            "locationDetail/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.IntType })
         ) { backStackEntry ->
-            backStackEntry.arguments?.getString("id")?.let { CharacterDetailScreen(navController, it) }
+            LocationDetailScreen(navController, backStackEntry.arguments?.getInt("id"))
         }
-
     }
 }

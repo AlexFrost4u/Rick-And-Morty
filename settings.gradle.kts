@@ -26,8 +26,8 @@ include(
     ":ui:home",
     ":ui:character:list",
     ":ui:location:list",
-    ":ui:episode:list",
-    ":ui:character_detail"
+    ":ui:location:detail",
+    ":ui:episode:list"
 )
 
 // Features
@@ -40,4 +40,3 @@ include(
 include(
     ":navigation"
 )
-

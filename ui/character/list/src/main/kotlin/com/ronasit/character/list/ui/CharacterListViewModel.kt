@@ -25,8 +25,8 @@ internal class CharacterListViewModel(
     fun getCharacterPagination(): Flow<PagingData<Character>> {
         val debounce = 400L
 
-        return Pager(PagingConfig(pageSize = Constants.pageSize)){
-            CharacterSource(getCharactersUseCase,container.stateFlow.value.searchText)
+        return Pager(PagingConfig(pageSize = Constants.pageSize)) {
+            CharacterSource(getCharactersUseCase, container.stateFlow.value.searchText)
         }.flow.debounce(debounce)
     }
 

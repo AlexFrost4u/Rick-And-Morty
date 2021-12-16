@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.location.list.components.FilterButton
@@ -17,7 +18,7 @@ import org.koin.androidx.compose.viewModel
 
 @FlowPreview
 @Composable
-fun LocationListScreen() {
+fun LocationListScreen(navController: NavController) {
     val viewModel: LocationListViewModel by viewModel()
     val state = viewModel.container.stateFlow.collectAsState().value
     val locations = viewModel.getLocationPagination().collectAsLazyPagingItems()
@@ -35,7 +36,7 @@ fun LocationListScreen() {
                     FilterButton()
                 }
                 Box(modifier = Modifier.fillMaxSize()) {
-                    ListLocationItem(locations)
+                    ListLocationItem(locations, navController = navController)
                 }
             }
         }

@@ -31,4 +31,6 @@ android {
 
 dependencies {
     implementation(project(ModuleDependency.Core.ui))
+    implementation(project(ModuleDependency.navigation))
+    implementation(Dependency.Accompanist.navigationAnimation)
 }

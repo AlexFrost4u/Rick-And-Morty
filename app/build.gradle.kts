@@ -56,6 +56,7 @@ dependencies {
     implementation(project(ModuleDependency.Feature.rickAndMorty_impl))
     implementation(project(ModuleDependency.UI.character))
     implementation(project(ModuleDependency.UI.location))
+    implementation(project(ModuleDependency.UI.character_detail))
 
     implementation(Dependency.AndroidX.core)
     implementation(Dependency.AndroidX.appcompat)

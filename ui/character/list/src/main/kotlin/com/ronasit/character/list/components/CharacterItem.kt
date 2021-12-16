@@ -16,12 +16,16 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.orhanobut.logger.Logger
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.feature.rickandmorty_api.model.Character
 
 @Composable
 internal fun CharacterItem(character: Character?) {
-    Column {
+    if (character != null) {
+        Logger.e("ID Value : ${character.id}")
+    }
+    Column{
         Image(
             painter = rememberImagePainter(character!!.imageUrl),
             contentDescription = null,

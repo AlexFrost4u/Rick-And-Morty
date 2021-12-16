@@ -7,12 +7,15 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.ronasit.character.list.ui.CharacterListScreen
 import com.ronasit.character.list.EpisodeListScreen
 import com.ronasit.location.list.ui.LocationListScreen
 import com.ronasit.navigation.NavigationItem
+import com.ronaisit.character_detail.ui.CharacterDetailScreen
 import kotlinx.coroutines.FlowPreview
 
 @FlowPreview
@@ -29,7 +32,7 @@ internal fun Navigation(navController: NavHostController) {
         popExitTransition = { fadeOut(animationSpec = tween(0)) },
     ) {
         composable(NavigationItem.Character.route) {
-            CharacterListScreen()
+            CharacterListScreen(navController = navController)
         }
 
         composable(NavigationItem.Location.route) {
@@ -39,5 +42,13 @@ internal fun Navigation(navController: NavHostController) {
         composable(NavigationItem.Episode.route) {
             EpisodeListScreen()
         }
+
+        composable(
+            NavigationItem.CharacterDetail.route.plus("/{id}"),
+            arguments = listOf(navArgument("id") { type = NavType.StringType })
+        ) { backStackEntry ->
+            backStackEntry.arguments?.getString("id")?.let { CharacterDetailScreen(navController, it) }
+        }
+
     }
 }

@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CharacterResponse(
     val info: Info,
-    val results: List<Result>
+    val results: List<CharacterResult>
 )
 
 fun CharacterResponse.toDomain():CharacterPager{

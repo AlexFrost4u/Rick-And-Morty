@@ -46,7 +46,6 @@ internal fun BottomNavigationBar(navController: NavController) {
                                 saveState = true
                             }
                         }
-
                         launchSingleTop = true
                         restoreState = true
                     }
@@ -65,7 +64,7 @@ private fun MenuItem(item: NavigationItem, currentRoute: String?) {
     }
 
     Icon(
-        painter = painterResource(id = resourceId),
+        painter = painterResource(id = resourceId!!),
         contentDescription = null
     )
 }

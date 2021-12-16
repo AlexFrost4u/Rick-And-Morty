@@ -58,6 +58,7 @@ object Dependency {
     object Accompanist {
         private const val version = "0.21.3-beta"
 
+        const val flowlayout = "com.google.accompanist:accompanist-flowlayout:$version"
         const val insets = "com.google.accompanist:accompanist-insets:$version"
         const val navigationAnimation = "com.google.accompanist:accompanist-navigation-animation:$version"
     }

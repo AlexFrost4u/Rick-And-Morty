@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 
 fun createInterceptor(): HttpLoggingInterceptor {
     val logging = HttpLoggingInterceptor()
-    logging.level = (HttpLoggingInterceptor.Level.BASIC)
+    logging.level = (HttpLoggingInterceptor.Level.HEADERS)
     return logging
 }
 

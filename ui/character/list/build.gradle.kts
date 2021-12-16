@@ -40,4 +40,6 @@ dependencies {
     implementation(Dependency.Other.toolbar)
     implementation(Dependency.Loggers.prettyLogger)
     implementation(Dependency.Accompanist.insets)
+    implementation(project(ModuleDependency.navigation))
+    implementation(Dependency.Navigation.compose)
 }

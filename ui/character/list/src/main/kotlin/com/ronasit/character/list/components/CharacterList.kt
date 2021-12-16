@@ -1,6 +1,7 @@
 package com.ronasit.character.list.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,7 +19,7 @@ import com.ronasit.feature.rickandmorty_api.model.Character
 
 @ExperimentalFoundationApi
 @Composable
-internal fun CharacterList(characters: LazyPagingItems<Character>) {
+internal fun CharacterList(characters: LazyPagingItems<Character>,onItemClick:(id:String) -> Unit) {
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
         modifier = Modifier
@@ -33,6 +34,7 @@ internal fun CharacterList(characters: LazyPagingItems<Character>) {
                     .defaultMinSize(minHeight = 256.dp, minWidth = 202.dp)
                     .fillMaxSize()
                     .padding(start = 16.dp, bottom = 16.dp)
+                    .clickable {onItemClick(characters[index]?.id.toString())}
             ) {
                 CharacterItem(character = characters[index])
             }

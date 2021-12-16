@@ -47,7 +47,7 @@ fun EpisodeList(episodes: List<Episode>?,onEpisodeCardClick:(id:String) -> Unit)
                     Column(Modifier.fillMaxSize()) {
                         Row(Modifier.fillMaxWidth()) {
                             Text(
-                                text = episodes[index].name.shortenIf(25),
+                                text = episodes[index].name.shortenIf(27),
                                 style = RickAndMortyTheme.typography.title5,
                                 color = RickAndMortyTheme.colors.white,
                                 modifier = Modifier.padding(start = 16.dp, top = 16.dp)

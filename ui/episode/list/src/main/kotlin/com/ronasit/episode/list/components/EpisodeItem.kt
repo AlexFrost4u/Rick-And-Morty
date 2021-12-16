@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
+import com.ronasit.core.ui.utls.shortenIf
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
@@ -25,7 +26,7 @@ internal fun EpisodeItem(episode: Episode, onEpisodeCardClick:(id:String) -> Uni
         Column(Modifier.fillMaxSize()) {
             Row(Modifier.fillMaxWidth()) {
                 Text(
-                    episode.name,
+                    episode.name.shortenIf(27),
                     style = RickAndMortyTheme.typography.title5,
                     color = RickAndMortyTheme.colors.white,
                     modifier = Modifier.padding(start = 16.dp, top = 16.dp)

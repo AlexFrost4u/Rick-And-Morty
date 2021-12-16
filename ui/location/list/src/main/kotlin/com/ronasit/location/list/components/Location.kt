@@ -14,6 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
+import com.ronasit.core.ui.utls.shortenIf
 import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.location.list.R
 
@@ -60,7 +61,7 @@ internal fun Location(location: Location, onLocationClick:(id:String) -> Unit) {
             )
             Column(Modifier.padding(start = 16.dp)) {
                 Text(
-                    location.name,
+                    location.name.shortenIf(27),
                     style = RickAndMortyTheme.typography.title5,
                     color = RickAndMortyTheme.colors.white,
                     modifier = Modifier.padding(top = 8.dp)

@@ -35,11 +35,7 @@ fun CharacterOrigin(origin: LocationDetail?,onOriginCardClick:(id:String) -> Uni
         Modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp)
-            .clickable {
-                if (origin != null) {
-                    onOriginCardClick(origin.id.toString())
-                }
-            }
+
     ) {
         Text(
             "Origin",
@@ -53,6 +49,11 @@ fun CharacterOrigin(origin: LocationDetail?,onOriginCardClick:(id:String) -> Uni
                 .height(80.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(color = RickAndMortyTheme.colors.blackCard, shape = RoundedCornerShape(16.dp))
+                .clickable {
+                    if (origin != null) {
+                        onOriginCardClick(origin.id.toString())
+                    }
+                }
         ) {
             Row(
                 Modifier

@@ -12,7 +12,6 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.flowlayout.FlowRow
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.core.ui.utils.shortenIf
-import com.ronasit.core.ui.utils.toFullEpisode
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable
@@ -55,7 +54,7 @@ fun EpisodeList(episodes: List<Episode>?, onEpisodeCardClick: (id: String) -> Un
                         }
                         Row(Modifier.fillMaxWidth()) {
                             Text(
-                                text = episodes[index].episode.toFullEpisode(),
+                                text = "Episode: ${episodes[index].episode}, Season: ${episodes[index].season}",
                                 style = RickAndMortyTheme.typography.bodySmall,
                                 color = RickAndMortyTheme.colors.primary,
                                 textAlign = TextAlign.Left,

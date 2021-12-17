@@ -32,7 +32,7 @@ internal fun ListToolBar(body: @Composable () -> Unit) {
                     .pin()
             )
             Image(
-                painter = painterResource(id = R.drawable.image_location),
+                painter = painterResource(id = R.drawable.ic_location),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alpha = state.toolbarState.progress,

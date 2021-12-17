@@ -14,7 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
-import com.ronasit.core.ui.utls.shortenIf
+import com.ronasit.core.ui.utils.shortenIf
 import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.location.list.R
 

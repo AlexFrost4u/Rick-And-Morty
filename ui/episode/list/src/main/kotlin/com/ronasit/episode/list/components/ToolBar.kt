@@ -32,7 +32,7 @@ internal fun ToolBar(body: @Composable () -> Unit) {
                     .pin()
             )
             Image(
-                painter = painterResource(id = R.drawable.image_episode),
+                painter = painterResource(id = R.drawable.ic_episode),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alpha = state.toolbarState.progress,

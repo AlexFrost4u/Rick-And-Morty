@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.ronasit.character.list.CharacterFilters
 import com.ronasit.character.list.Constants
 import com.ronasit.character.list.datasource.CharacterSource
 import com.ronasit.feature.rickandmorty_api.model.Character
@@ -43,27 +44,9 @@ internal class CharacterListViewModel(
         }
     }
 
-    fun onChangeStatus(text: String) = intent {
+    fun onFilterChanged(filter: CharacterFilters) = intent {
         reduce {
-            state.copy(status = text)
-        }
-    }
-
-    fun onChangeSpecies(text: String) = intent {
-        reduce {
-            state.copy(species = text)
-        }
-    }
-
-    fun onChangeType(text: String) = intent {
-        reduce {
-            state.copy(type = text)
-        }
-    }
-
-    fun onChangeGender(text: String) = intent {
-        reduce {
-            state.copy(gender = text)
+            state.copy(status = filter.status, species = filter.species, type = filter.type, gender = filter.gender)
         }
     }
 

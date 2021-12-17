@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ronasit.core.ui.theme.RickAndMortyTheme
-import com.ronasit.core.ui.utls.shortenIf
+import com.ronasit.core.ui.utils.shortenIf
 import com.ronasit.feature.rickandmorty_api.model.CharacterDetail
 
 @Composable

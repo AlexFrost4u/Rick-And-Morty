@@ -39,8 +39,12 @@ fun LocationListScreen(
             SheetContent(
                 state.type,
                 state.dimension,
-                onUpdateType = { viewModel.updateType(it) },
-                onUpdateDimension = { viewModel.updateDimension(it) })
+                onFilterChanged = {
+                    viewModel.onFiltersChanged(it)
+                    coroutineScope.launch {
+                        bottomSheetScaffoldState.bottomSheetState.collapse()
+                    }
+                })
         },
         sheetShape = RoundedCornerShape(16.dp),
         sheetBackgroundColor = Color.Transparent,

@@ -19,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.insets.navigationBarsPadding
+import com.ronasit.character.list.CharacterFilters
 import com.ronasit.character.list.Filter.characterGender
 import com.ronasit.character.list.Filter.characterSpecies
 import com.ronasit.character.list.Filter.characterStatus
@@ -32,10 +33,7 @@ internal fun SheetContent(
     species: String,
     type: String,
     gender: String,
-    onUpdateStatus: (String) -> Unit,
-    onUpdateSpecies: (String) -> Unit,
-    onUpdateType: (String) -> Unit,
-    onUpdateGender: (String) -> Unit,
+    onFilterChanged:(CharacterFilters) -> Unit
 ) {
     val scroll = rememberScrollState()
     var localStatus by rememberSaveable { mutableStateOf("") }
@@ -106,10 +104,14 @@ internal fun SheetContent(
         }
         Button(
             onClick = {
-                if (localStatus != status) onUpdateStatus(localStatus)
-                if (localSpecies != species) onUpdateSpecies(localSpecies)
-                if (localType != type) onUpdateType(localType)
-                if (localGender != gender) onUpdateGender(localGender)
+                onFilterChanged(
+                    CharacterFilters(
+                        status = localStatus,
+                        species = localSpecies,
+                        type = localType,
+                        gender = localGender
+                    )
+                )
             },
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(

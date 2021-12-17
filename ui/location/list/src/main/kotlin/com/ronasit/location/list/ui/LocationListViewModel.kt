@@ -6,6 +6,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.ronasit.feature.rickandmorty_api.model.Location
 import com.ronasit.feature.rickandmorty_api.usecase.GetLocationsUseCase
+import com.ronasit.location.list.LocationFilters
 import com.ronasit.location.list.datasource.LocationSource
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
@@ -41,15 +42,9 @@ class LocationListViewModel(
         }
     }
 
-    fun updateType(text: String) = intent {
+    fun onFiltersChanged(filter:LocationFilters) = intent{
         reduce {
-            state.copy(type = text)
-        }
-    }
-
-    fun updateDimension(text: String) = intent {
-        reduce {
-            state.copy(dimension = text)
+            state.copy(type = filter.type, dimension = filter.dimension)
         }
     }
 }

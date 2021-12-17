@@ -11,8 +11,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.flowlayout.FlowRow
 import com.ronasit.core.ui.theme.RickAndMortyTheme
-import com.ronasit.core.ui.utls.shortenIf
-import com.ronasit.core.ui.utls.toFullEpisode
+import com.ronasit.core.ui.utils.shortenIf
+import com.ronasit.core.ui.utils.toFullEpisode
 import com.ronasit.feature.rickandmorty_api.model.Episode
 
 @Composable

@@ -16,12 +16,11 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.ronasit.character.list.components.*
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.navigation.NavigationItem
-import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.viewModel
 
-@DelicateCoroutinesApi
+
 @ExperimentalMaterialApi
 @FlowPreview
 @ExperimentalFoundationApi
@@ -46,10 +45,12 @@ fun CharacterListScreen(
                 state.species,
                 state.type,
                 state.gender,
-                onUpdateStatus = { viewModel.onChangeStatus(it) },
-                onUpdateSpecies = { viewModel.onChangeSpecies(it) },
-                onUpdateType = { viewModel.onChangeType(it) },
-                onUpdateGender = { viewModel.onChangeGender(it) },
+                onFilterChanged = {
+                    viewModel.onFilterChanged(it)
+                    coroutineScope.launch {
+                        bottomSheetScaffoldState.bottomSheetState.collapse()
+                    }
+                }
             )
         },
         sheetShape = RoundedCornerShape(16.dp),

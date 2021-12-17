@@ -1,4 +1,7 @@
-package com.ronasit.core.ui.utls
+package com.ronasit.core.ui.utils
+
+import java.net.URI
+import java.nio.file.Paths
 
 fun String.toFullEpisode(): String {
     val season = this
@@ -20,3 +23,4 @@ fun String.shortenIf(length: Int): String {
         this
     }
 }
+

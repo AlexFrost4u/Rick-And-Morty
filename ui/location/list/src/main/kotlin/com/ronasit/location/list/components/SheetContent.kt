@@ -22,14 +22,14 @@ import com.google.accompanist.insets.navigationBarsPadding
 import com.ronasit.core.ui.theme.RickAndMortyTheme
 import com.ronasit.location.list.Filter.locationDimension
 import com.ronasit.location.list.Filter.locationType
+import com.ronasit.location.list.LocationFilters
 import com.ronasit.location.list.R
 
 @Composable
 internal fun SheetContent(
     type: String,
     dimension: String,
-    onUpdateType: (String) -> Unit,
-    onUpdateDimension: (String) -> Unit
+    onFilterChanged: (LocationFilters) -> Unit
 ) {
     val scroll = rememberScrollState()
     var localType by rememberSaveable { mutableStateOf("") }
@@ -90,8 +90,12 @@ internal fun SheetContent(
         }
         Button(
             onClick = {
-                if (localType != type) onUpdateType(localType)
-                if (localDimension != dimension) onUpdateDimension(localDimension)
+                onFilterChanged(
+                    LocationFilters(
+                        type = localType,
+                        dimension = localDimension
+                    )
+                )
             },
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(

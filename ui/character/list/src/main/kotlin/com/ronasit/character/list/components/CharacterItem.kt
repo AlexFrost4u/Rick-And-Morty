@@ -23,7 +23,6 @@ import com.ronasit.feature.rickandmorty_api.model.Character
 @Composable
 internal fun CharacterItem(character: Character?) {
     if (character != null) {
-        Logger.e("ID Value : ${character.id}")
     }
     Column {
         Image(

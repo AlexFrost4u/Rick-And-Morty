@@ -39,6 +39,6 @@ Plugin **Gradle Versions Plugin**, check version and logs possible updates
 
 `gradle dependencyUpdates` - check and out updates
 
-Project was developed in internship project at Ronast IT
+Project was developed in internship project at Ronas IT
 
-Design was provided by company [Ronas IT](https://www.ronasit.com)
+Design was provided by company[Ronas IT](https://www.ronasit.com)

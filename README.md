@@ -4,42 +4,41 @@
 
 ## Gradle
 
-### Плагины
+### Plugins
 
-В проекте есть набор плагинов, ниже представлен список и варианты использования.
+List of plugins used in app
 
 - [Ktlint](https://github.com/pinterest/ktlint)
 - [Detekt](https://github.com/arturbosch/detekt#with-gradle)
 - [Spotless](https://github.com/diffplug/spotless)
 - [Gradle Version Plugin](https://github.com/ben-manes/gradle-versions-plugin)
 
-#### Анализ кода
+#### Code analysis
 
-Плагины `Ktlint`, `Spotless` и `Detekt`, для анализа и форматирования кода.
+Plugins `Ktlint`, `Spotless` and `Detekt` used for code formating and analysis.
 
-**Использование**:
+**Usage**:
 
-`gradle ktlintCheck` - проверка кода
+`gradle ktlintCheck` - code scan
 
-`gradle ktlintFormat` - проверка и форматирование кода
+`gradle ktlintFormat` - code scan and format 
 
-`gradle detekt` - проверка и форматирование кода
+`gradle detekt` - code scan and format
 
-`gradle spotlessCheck` - только для проверки кода
+`gradle spotlessCheck` - purely code scan
 
-`gradle spotlessApply` - проверки и форматирование кода
+`gradle spotlessApply` - check and format code 
 
-`gradle ktlintFormat detekt spotlessApply ` - с использованием всех линтеров
+`gradle ktlintFormat detekt spotlessApply ` - use every linter
 
-#### Проверка версии зависимостей
+#### Check for dependencies' update
 
-Плагин **Gradle Versions Plugin**, проверяет и выводит текущие версии используемых в проекте
-библиотек и их последнии вресии.
+Plugin **Gradle Versions Plugin**, check version and logs possible updates
 
-**Использование**:
+**Usage**:
 
-`gradle dependencyUpdates` - проверяет и выводит версии библиотек
+`gradle dependencyUpdates` - check and out updates
 
-Проект разработан в рамках прохождения стажировки по направлению Android
+Project was developed in internship project at Ronast IT
 
-Дизайн был подготовлен компанией [Ronas IT](https://www.ronasit.com)
+Design was provided by company[Ronas IT](https://www.ronasit.com)
